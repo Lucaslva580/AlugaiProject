@@ -39,7 +39,7 @@ h1 {
 #entrar {
   position: absolute;
   margin-left: 95px;
-  margin-top: 60px;
+  margin-top: 30px;
   /* background-color: #a7ffff; */
   background-color: #006494;
   border: none;
@@ -74,13 +74,13 @@ a:first-child{
 }
 a:last-child{
   margin-left: 90px;
-  margin-top: 112px;
+  margin-top: 93px;
 }
 a {
   /* position: relative; */
   position: absolute;
     margin-left: 107px;
-    margin-top: 106px;
+    margin-top: 85px;
     margin-right: 100px;
     margin-bottom: 90px;
     color: black;
@@ -116,6 +116,9 @@ a:hover {
   border-color: darkgrey;
   background-color: #E8f1f2;
   width: 300px;
+  outline: none;
+  white-space: normal;
+  padding:0px 20px
 }
 
 .footer {
