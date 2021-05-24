@@ -34,7 +34,7 @@ function get_endereco($cep){
   <input type="text" name="cep">
   <button type="submit">Pesquisar Endereço</button>
 </form>
-<?php if($_POST['cep']){ ?>
+ <?php $cep = $_POST['cep'] ?>
 <h2>Resultado da Pesquisa</h2>
 <p>
   <?php $endereco = get_endereco($_POST['cep']); ?>
@@ -44,7 +44,7 @@ function get_endereco($cep){
   <b>Localidade: </b> <?php echo $endereco->localidade; ?><br>
   <b>UF: </b> <?php echo $endereco->uf; ?><br>
 </p>
-<?php } ?>
+<?php ?>
 <input type="submit" value="Cadastrar" id="cadastrar" name="cadastrar">
 </form>
 </body>

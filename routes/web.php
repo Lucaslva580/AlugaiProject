@@ -1,34 +1,33 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;    
-use App\Http\Controllers\AutenticaController;    
-use App\Http\Controllers\ProdutosController;    
+use App\Http\Controllers\{
+    HomeController,
+    AutenticaController,
+    PostController,
+    ProdutosController,
+};
 
 // Route::get('/', 'HomeController@index');
-Route::get('/', [HomeController::class, 'index']);
-
-Route::get('/login2', function () {
-    return view('login2');
-});
-
-Route::post('/autentica', [AutenticaController::class, 'index']);
-Route::get('/autentica', [AutenticaController::class, 'index']);
-
-Route::get('/produtos/excluir/{userID}/{ProdutoID}', [ProdutosController::class, 'excluir']);
-Route::get('/produtos', [ProdutosController::class, 'index']);
-Route::get('/produtos', [ProdutosController::class, 'index']);
-
+Route::get('/posts', [PostController::class, 'index'] );
+// Views
 Route::get('/login', function () {
     return view('login');
-});
-Route::get('/welcome', function () {
-    return view('welcome');
 });
 
 Route::get('/cadastro', function () {
     return view('cadastro');
 });
-// Auth::routes();
+
+// Controllers
+Route::get('/', [HomeController::class, 'index']);
+
+Route::get('/produtos/excluir/{userID}/{ProdutoID}', [ProdutosController::class, 'excluir']);
+// Route::get('/produtos/adicionar/', [ProdutosController::class, 'index']);
+// Route::get('/produtos/consultar/', [ProdutosController::class, 'index']);
+// Route::get('/produtos/alterar/', [ProdutosController::class, 'index']);
+
+Route::post('/autentica', [AutenticaController::class, 'index']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
