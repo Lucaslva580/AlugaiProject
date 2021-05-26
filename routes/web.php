@@ -19,6 +19,10 @@ Route::get('/cadastro', function () {
     return view('cadastro');
 });
 
+Route::get('/cadastroManual', function () {
+    return view('cadastros/cadastroManual');
+});
+
 // Controllers
 Route::get('/', [HomeController::class, 'index']);
 
