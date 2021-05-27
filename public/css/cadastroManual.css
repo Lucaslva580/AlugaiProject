@@ -1,1 +1,26 @@
+.card {
+  margin:3rem;
+  border-radius:2rem;
+  border-color: #8fafb1; 
+  margin-top: 2rem;
+  border-radius: 2rem;
+  box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 10px 10px 0px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 10px 20px 0px rgba(0 0 0 / 40%);
+  -o-box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.1);
+  -ms-box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.1);
+}
 
+h2 {
+  margin-top:2rem;
+}
+
+#id {
+  margin-left:1rem;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }

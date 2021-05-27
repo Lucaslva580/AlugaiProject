@@ -11,11 +11,12 @@ class AutenticaController extends Controller
     public function index(Request $request){
         //option 1
         // $dados = $request ->all();
-        
-        $email = $request->input('email');
-        $senha = $request->input('senha');
-        $entrar =$request->Entrar;
 
+        $dados = [
+            $email = $request->input('email'),
+            $senha = $request->input('senha'),
+            $entrar = $request->Entrar,   
+        ];
         if (isset($entrar)) {
         $results = DB::select('select * from users where email = :email and password = :senha', ['email' => $email, 'senha'=>$senha]);
         if (empty($results)){
@@ -24,7 +25,7 @@ class AutenticaController extends Controller
             .href='login';</script>";
         }else{
         setcookie("login",$email);
-        return view('produtos', ['email'=>$email, 'senha'=>$senha]);
+        return view('produtos', ['dados'=>$dados]);
       }
   }
 

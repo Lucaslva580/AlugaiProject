@@ -1,134 +1,41 @@
 
 #modalLogin { 
-  z-index: 1;
-  padding-top: inherit;
-  padding: 300px 200px 50px 200px;
-  /* height: 50px; */
-  position: absolute;
-  top: 39%;
-  width: 190px;
-  left: 40%;
-  margin-top: -74px;
-  margin-left: -125px;
+  border-width: 0.2rem;
+  border-color: #8fafb1; 
+  margin-top: 1rem;
   background-color: white;
   border-radius: 2rem;
-  /* border-style: solid; */
-  border-width: 0.5rem;
-  border-color: #00c2cb;
   box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 10px 10px 0px rgba(0, 0, 0, 0.1);
-  -webkit-box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 10px 20px 0px rgba(0 0 0 / 40%);
   -o-box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.1);
   -ms-box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
   color:#13293d;
-  font-size: 200px;
+  font-size: clamp(10px, 15vw, 200px);
   font-family: 'Yellowtail', sans-serif;
-  position: absolute;
-  margin: 1rem 1rem 1rem 43rem;
   text-shadow: 2px 2px white;
 }
 
-#form {
-  margin-top: -260px;
-  margin-left:-50px;
-}
-
 #entrar {
-  position: absolute;
-  margin-left: 95px;
-  margin-top: 30px;
-  /* background-color: #a7ffff; */
-  background-color: #006494;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 21px;
-  border-radius: 0.5rem;
-  font-weight: bold;
-  /* border-style: solid; */
-  border-width: 0.2rem;
-  border-color: #00c2cb;
+  font-size: 25px;
   box-shadow: 0 10px 20px 0px rgb(0 0 0 / 10%);
   -moz-box-shadow: 0 10px 10px 0px rgba(0, 0, 0, 0.1);
-  -webkit-box-shadow: 0 10px 20px 0px rgb(0 0 0 / 10%);
+  -webkit-box-shadow: 10px 10px 20px 0px rgb(0 0 0 / 20%);
   -o-box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.1);
   -ms-box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.1);
 }
 
+
 #entrar:hover{
   background-color: #1b98e0;
-  color:white;
-  padding: 15px 32px;
-  cursor: pointer;
 }
 
-a:first-child{
-  margin-right: 0px;
-  padding: 0px;
-}
-a:last-child{
-  margin-left: 90px;
-  margin-top: 93px;
-}
-a {
-  /* position: relative; */
-  position: absolute;
-    margin-left: 107px;
-    margin-top: 85px;
-    margin-right: 100px;
-    margin-bottom: 90px;
-    color: black;
-    text-align: left;
-    text-decoration: none;
-    font-size: 16px;
-    border-radius: 0.5rem;
-    font-weight: bold;
-    color: blue;
-}
-
-#recupera{
-  margin-right:100px;
-}
-a:hover {
-  text-decoration:underline;
-  color: rgba(247, 3, 3, 0.945);
-}
-
-
-.fonte {
+.form-label {
   font-family: 'Open Sans', 'sans-serif';
   font-weight: bold;
   padding: 2px;
   font-size: 22px;
 }
-
-#senha, #login{
-  border-radius: 1rem;
-  height: 25px;
-  border: solid;
-  border-width: 1px;
-  border-color: darkgrey;
-  background-color: #E8f1f2;
-  width: 300px;
-  outline: none;
-  white-space: normal;
-  padding:0px 20px
-}
-
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 40%;
-  background-color: #13293d;
-  color: #13293d;
-  text-align: center;
-}
-/* eu comentei aqui
