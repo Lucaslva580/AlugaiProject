@@ -7,22 +7,22 @@
 <link href="{{ asset('css/login.css') }}" rel="stylesheet" type="text/css">
 <body style="background-color:#1b98e0">
   <div class="container">
-    <h1>Alugaí</h1>
+    <h1 class="text-center">Alugaí</h1>
     <div class="row justify-content-center">
-      <div id=modalLogin class="card text-dark bg-info mb-8 col-8">
+      <div id=modalLogin class="card text-dark mb-8 col-8">
         <div style="margin:3rem" class="col d-flex justify-content-center" id=formLogin>
           <form style="margin-bottom:2rem;" class="row g-3 col-10" method="post" action="/autentica">
             @csrf
-            <div class="row g-3">
+            <div class="row g-4">
               <div class="col">
                 <label class="form-label"><i class="far fa-envelope"></i> Login:</label></br>
                 <input class="form-control" type="text" name="email" value="{{ old('email') }}" id="login" required autocomplete="email" placeholder="email@exemplo.com" autofocus ><br><br>
               </div>
             </div>
-            <div class="row g-3">
+            <div class="row">
               <div class="col">
                 <label class="form-label"><i class="fas fa-lock"></i> Senha:</label></br>
-                <input class="form-control" name="senha" value="{{ old('senha') }}" id="senha" name="password" required autocomplete="current-password"><br>
+                <input type="password" class="form-control" name="senha" value="{{ old('senha') }}" id="senha" name="password" required autocomplete="current-password"><br>
               </div>
             </div>
             <div class="form-group row">
