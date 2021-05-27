@@ -1,9 +1,9 @@
 
 #modalLogin { 
-  z-index: 1;
+  /* z-index: 1;
   padding-top: inherit;
   padding: 300px 200px 50px 200px;
-  /* height: 50px; */
+  height: 50px;
   position: absolute;
   top: 39%;
   width: 190px;
@@ -11,17 +11,17 @@
   margin-top: -74px;
   margin-left: -125px;
   background-color: white;
-  border-radius: 2rem;
-  /* border-style: solid; */
+  border-style: solid;
   border-width: 0.5rem;
-  border-color: #00c2cb;
+  border-color: #00c2cb; */
+  border-radius: 2rem;
   box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 10px 10px 0px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.1);
   -o-box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.1);
   -ms-box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.1);
 }
-
+/* 
 h1 {
   color:#13293d;
   font-size: 200px;
@@ -40,7 +40,7 @@ h1 {
   position: absolute;
   margin-left: 95px;
   margin-top: 30px;
-  /* background-color: #a7ffff; */
+  background-color: #a7ffff;
   background-color: #006494;
   border: none;
   color: white;
@@ -51,7 +51,7 @@ h1 {
   font-size: 21px;
   border-radius: 0.5rem;
   font-weight: bold;
-  /* border-style: solid; */
+  border-style: solid;
   border-width: 0.2rem;
   border-color: #00c2cb;
   box-shadow: 0 10px 20px 0px rgb(0 0 0 / 10%);
@@ -77,7 +77,7 @@ a:last-child{
   margin-top: 93px;
 }
 a {
-  /* position: relative; */
+  position: relative;
   position: absolute;
     margin-left: 107px;
     margin-top: 85px;
@@ -130,5 +130,5 @@ a:hover {
   background-color: #13293d;
   color: #13293d;
   text-align: center;
-}
+} */
 /* eu comentei aqui

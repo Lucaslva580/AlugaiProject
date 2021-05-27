@@ -1,5 +1,4 @@
 <h1> Produtos </h1>
-
 <form action="get">
 <label>Produto</label>
 <input type="text" name="NomeProduto"><br><br>
