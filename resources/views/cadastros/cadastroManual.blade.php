@@ -1,9 +1,10 @@
 @extends('layouts.main')
 
-@section('title', 'Alugaí')
+@section('title', 'Cadastroalugai')
 
 @section('content')
 
+<button onclick="window.location.href='/login'"><i class="fas fa-arrow-left"></i></i></button>
 <link href="{{ asset('css/cadastroManual.css') }}" rel="stylesheet" type="text/css">
 <body style="background-color:#1b98e0">
   <div class="container">
@@ -62,14 +63,17 @@
                 <input type="text" class="form-control" id="inputCidade">
               </div>
               <div class="col-md-2">
+              <label for="inputState" class="form-label">UF</label>
               <?php
               use Illuminate\Support\Facades\DB;
-              $Estados = DB::select('select UF from states');
+              $Estados = DB::table('states')->pluck('UF');
+              echo "<select id='inputState' class='form-select'>";
               ?>
-                <label for="inputState" class="form-label">UF</label>
-                <select id="inputState" class="form-select">
-                    <option selected><?php print_r($Estados[0]) ?></option>
-                </select>
+              @foreach($Estados as $Estado) {
+                "<option name='$Estado'>{{$Estado}}</option>";           
+              }
+              @endforeach
+              </select>
               </div>
               <div class="col-md-5">
                 <label for="inputCEP" class="form-label">CEP</label>
@@ -142,6 +146,6 @@ $("#inputNumero").focusout(function() {
     $("#inputNumero").val("");
   }
 });
-  </script>
+</script>
 
 @endsection

@@ -15,10 +15,6 @@ Route::get('/login', function () {
     return view('login');
 });
 
-Route::get('/cadastro', function () {
-    return view('cadastro');
-});
-
 Route::get('/cadastroManual', function () {
     return view('cadastros/cadastroManual');
 });
@@ -27,9 +23,9 @@ Route::get('/cadastroManual', function () {
 Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/produtos/excluir/{userID}/{ProdutoID}', [ProdutosController::class, 'excluir']);
-// Route::get('/produtos/adicionar/', [ProdutosController::class, 'index']);
-// Route::get('/produtos/consultar/', [ProdutosController::class, 'index']);
-// Route::get('/produtos/alterar/', [ProdutosController::class, 'index']);
+// Route::get('/produtos/adicionar/{userID}/{ProdutoID}', [ProdutosController::class, 'index']);
+// Route::get('/produtos/consultar/{userID}/{ProdutoID}', [ProdutosController::class, 'index']);
+// Route::get('/produtos/alterar/{userID}/{ProdutoID}', [ProdutosController::class, 'index']);
 
 Route::post('/autentica', [AutenticaController::class, 'index']);
 
