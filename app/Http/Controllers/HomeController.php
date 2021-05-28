@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function index(){
-      echo "dados aqui";
+      echo "Verificação começa aqui";
     }
 }
 ?>

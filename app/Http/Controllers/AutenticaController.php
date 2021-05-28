@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use PhpParser\Node\Stmt\Foreach_;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 class AutenticaController extends Controller
 {
@@ -13,9 +14,9 @@ class AutenticaController extends Controller
         // $dados = $request ->all();
 
         $dados = [
-            $email = $request->input('email'),
-            $senha = $request->input('senha'),
-            $entrar = $request->Entrar,   
+            "email" => $email = $request->input('email'),
+            "senha" => $senha = $request->input('senha'),
+            "entrar" => $entrar = $request->Entrar,
         ];
         if (isset($entrar)) {
         $results = DB::select('select * from users where email = :email and password = :senha', ['email' => $email, 'senha'=>$senha]);
@@ -24,13 +25,14 @@ class AutenticaController extends Controller
             alert('Login e/ou senha incorretos');window.location
             .href='login';</script>";
         }else{
-        setcookie("login",$email);
+        // Hash::make()
+        // Session::put('usuario', ['session' => $senha]);
+        // setcookie("login",$email);
+        // $usuario = Session::get('usuario');
         return view('produtos', ['dados'=>$dados]);
-      }
-  }
-
-
-        // return view('/autentica')->with('dados', $dados);
     }
 }
+}
+}
+// return view('/autentica')->with('dados', $dados);
 ?>
