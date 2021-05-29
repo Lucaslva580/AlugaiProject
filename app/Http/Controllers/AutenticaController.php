@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 
+
 class AutenticaController extends Controller
 {
     public function index(Request $request){
@@ -25,11 +26,16 @@ class AutenticaController extends Controller
             alert('Login e/ou senha incorretos');window.location
             .href='login';</script>";
         }else{
-        // Hash::make()
-        // Session::put('usuario', ['session' => $senha]);
-        // setcookie("login",$email);
-        // $usuario = Session::get('usuario');
-        return view('produtos', ['dados'=>$dados]);
+            $UserID = $results[0]->id;
+            $request->session()->put('sessao', $UserID.$email);
+            $sessao = $request->session()->get('sessao');
+            if (isset($sessao)){
+                return view('PesquisaProdutos',[]);
+            } else {
+                print_r("alo alo");
+            }
+            // print_r($request->session()->all());
+            //  $request->session()->forget('sessao'); ->apaga um unico item da sessao
     }
 }
 }
