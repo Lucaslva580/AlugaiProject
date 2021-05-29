@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.HeaderFooter')
 
 @section('title', 'Alugaí')
 
@@ -6,7 +6,6 @@
 
 <h1> Produtos </h1>
 <form action="get">
-  <p>{{$dados["email"]}}</p>
 
   <label>Produto</label>
   <input type="text" name="NomeProduto"><br><br>
