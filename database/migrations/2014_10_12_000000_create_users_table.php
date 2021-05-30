@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
         $table->string('telefoneCelular');
         $table->string('rua');
         $table->string('numero');
-        $table->string('complemento');
+        $table->string('complemento')->nullable();
         $table->string('bairro');
         $table->string('cidade');
         $table->string('estado');

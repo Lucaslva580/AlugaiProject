@@ -16,12 +16,12 @@ class AutenticaController extends Controller
 
         $dados = [
             "email" => $email = $request->input('email'),
-            "senha" => $senha = $request->input('senha'),
+            "senha" => $senha = $request->input('password'),
             "entrar" => $entrar = $request->Entrar,
         ];
         if (isset($entrar)) {
         $results = DB::select('select * from users where email = :email and password = :senha', ['email' => $email, 'senha'=>$senha]);
-        if (empty($results)){
+        if (DB::table('users')->where('email', $email)->where('password', $senha)->doesntExist()){
             echo"<script language='javascript' type='text/javascript'>
             alert('Login e/ou senha incorretos');window.location
             .href='login';</script>";
