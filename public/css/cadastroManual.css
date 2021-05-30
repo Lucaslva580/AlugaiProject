@@ -47,3 +47,20 @@ input[type=number]::-webkit-inner-spin-button,
 input{
   margin-bottom:2rem;
 }
+
+#voltar{
+  margin-top:3rem;
+  margin-left:5rem;
+  background-color: #13293d;
+  color: white;
+  border: none;
+}
+
+.container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    max-width: 15000px;
+    max-height: 3000px;
+}
+
+#voltar:hover{
+  background-color: #198754;
+}

@@ -28,6 +28,7 @@ class CreateUsersTable extends Migration
         $table->string('estado');
         $table->string('email')->unique();
         $table->string('password');
+        $table->integer('sysactive')->boolval();
         });
     }
 

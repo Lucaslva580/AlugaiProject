@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\product;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -54,7 +55,7 @@ class UserController extends Controller
 
     public function consulta($userId){
 
-        $results = DB::table('user')->find($userId);
+        $results = DB::table('users')->find($userId);
         print_r($results);
 
         // return view('produtos', $results);
@@ -62,7 +63,7 @@ class UserController extends Controller
 
     public function Exclui($userId){
 
-        DB::delete('delete * from users where id= :userId' , ['userId' => $userId]);
+        DB::delete('delete from users where id= :userId' , ['userId' => $userId]);
         print_r("deletado");
 
         // return view('produtos', $results);

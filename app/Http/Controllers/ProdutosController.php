@@ -12,7 +12,7 @@ class ProdutosController extends Controller
         // $dados = $request ->all();
         // $UserID = $dados['UserID'];
         // $ProdutoID = $dados['ProdutoID'];
-        DB::insert('insert into users (name, email, password) values (":name", ":email" , ":senha" ) ', ['name' => $name,'email'=> $email, 'senha' => $senha]);
+        // DB::insert('insert into products (name, email, password) values (":name", ":email" , ":senha" ) ', ['name' => $name,'email'=> $email, 'senha' => $senha]);
         print_r("Adicionado");
         // DB::insert('select * from users where email = :email and password = :senha', ['email' => $email, 'senha'=>$senha]);
 
