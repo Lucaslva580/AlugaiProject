@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Products extends Migration
+class Administrator extends Migration
 {
     /**
      * Run the migrations.
@@ -12,18 +12,13 @@ class Products extends Migration
      * @return void
      */
     public function up()
-    {Schema::create('products', function (Blueprint $table) {
+    {Schema::create('administrator', function (Blueprint $table) {
         $table->id();
-        $table->string('name')->index();
-        $table->string('category');
-        $table->float('product_value');
-        $table->string('description');
-
+        $table->string('name');
+        $table->string('corporate_email')->unique();
+        $table->string('password');
+        });
         
-        
-        
-    });
-        //
     }
 
     /**
@@ -33,6 +28,6 @@ class Products extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('products');
+        Schema::dropIfExists('administrator');
     }
 }

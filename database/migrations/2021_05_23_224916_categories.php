@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 class Categories extends Migration
@@ -16,9 +17,6 @@ class Categories extends Migration
         $table->id();
         $table->string('categoria');
 
-        
-        
-        
     });
     DB::insert('insert into categories (id, categoria) values (?, ?)', [1, 'ferramentas']);
     DB::insert('insert into categories (id, categoria) values (?, ?)', [2, 'artigosDeEsporte']);

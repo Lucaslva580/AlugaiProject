@@ -7,6 +7,7 @@ use App\Http\Controllers\{
     PostController,
     ProdutosController,
     SessionController,
+    UserController,
 };
 
 // Route::get('/', 'HomeController@index');
@@ -20,6 +21,7 @@ Route::get('/login', function () {
                window.location.href='/';</script>";
       }
 });
+Route::get('/desloga', [SessionController::class, 'desloga']);
 
 Route::get('/cadastroManual', function () {
     return view('cadastros/cadastroManual');
@@ -32,12 +34,15 @@ Route::get('/PesquisaProdutos', function () {
 // Controllers
 Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/desloga', [SessionController::class, 'desloga']);
 
-Route::get('/produtos/excluir/{userID}/{ProdutoID}', [ProdutosController::class, 'excluir']);
-// Route::get('/produtos/adicionar/{userID}/{ProdutoID}', [ProdutosController::class, 'index']);
-Route::get('/produtos', [ProdutosController::class, 'index'])->name('produtao');;
-// Route::get('/produtos/alterar/{userID}/{ProdutoID}', [ProdutosController::class, 'index']);
+// Route::get('/produtos/excluir/{userId}/{ProdutoID}', [ProdutosController::class, 'excluir']);
+Route::get('/produtos/adicionar/{name}/{email}/{senha}/', [ProdutosController::class, 'adiciona']);
+// Route::get('/produtos', [ProdutosController::class, 'index'])->name('produtao');;
+// Route::get('/produtos/alterar/{userId}/{ProdutoID}', [ProdutosController::class, 'index']);
+
+Route::post('/usuarios/adicionar', [UserController::class, 'adiciona']);
+Route::get('/usuarios/consultar/{userId}', [UserController::class, 'consulta']);
+Route::delete('/usuarios/excluir', [UserController::class, 'exclui']);
 
 Route::post('/autentica', [AutenticaController::class, 'index']);
 

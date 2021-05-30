@@ -23,7 +23,7 @@
             <div class="row">
               <div class="col">
                 <label class="form-label"><i class="fas fa-lock"></i> Senha:</label></br>
-                <input type="password" class="form-control" name="senha" value="{{ old('senha') }}" id="senha" name="password" required autocomplete="current-password"><br>
+                <input type="password" class="form-control" value="{{ old('password') }}" id="password" name="password" required autocomplete="current-password"><br>
               </div>
             </div>
             <div class="form-group row">
