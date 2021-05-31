@@ -1,13 +1,10 @@
 <script type="text/javascript">
-  var inputPassword = $('#inputPassword');
-  var olho = $("#olho");
-
-  olho.mousedown(function() {
-    senha.attr("type", "text");
+  $("#olho").mousedown(function() {
+    $('#inputPassword').attr("type", "text");
   });
 
-  olho.mouseup(function() {
-    senha.attr("type", "password");
+  $("#olho").mouseup(function() {
+    $('#inputPassword').attr("type", "password");
   });
 
   $("#olho").mouseout(function() {

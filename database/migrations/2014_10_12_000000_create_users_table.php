@@ -19,7 +19,8 @@ class CreateUsersTable extends Migration
         $table->string('cpf');
         $table->string('rg');
         $table->date('dataNascimento');
-        $table->string('telefoneCelular');
+        $table->string('telefone');
+        $table->string('celular');
         $table->string('rua');
         $table->string('numero');
         $table->string('complemento')->nullable();
