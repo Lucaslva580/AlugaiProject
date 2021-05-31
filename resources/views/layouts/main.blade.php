@@ -6,9 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <title>@yield('title')</title>
-    <link href="{{ asset('css/cadastroFinalizado.css') }}" rel="stylesheet" type="text/css">
-    <script src="//code-sa1.jivosite.com/widget/oHcm1tfcUg" async></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    
+    
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
     <link href="{{ asset('css/cadastroManual.css') }}" rel="stylesheet" type="text/css">
     <script src="{{ asset('site/jquery.js') }}"></script>

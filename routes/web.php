@@ -47,6 +47,3 @@ Route::post('/autentica', [AutenticaController::class, 'index']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/cadastroFinalizado', function () {
-    return view('cadastros/cadastroFinalizado');
-});
