@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 class UserController extends Controller
 {
     public function adiciona(Request $request){
-        $dados = $request ->all();
+        $dados = $request->all();
         $ExistEmail = User::where('email', $dados['email']);
         $ExistCPF = User::where('cpf', $dados['cpf']);
         $ExistRG = User::where('rg', $dados['rg']);
@@ -18,39 +18,37 @@ class UserController extends Controller
             echo "<script language='javascript' type='text/javascript'>
             alert('Esse email já foi registrado, use um email diferente ou recupere sua senha');</script>";
             return view('cadastros/cadastroManual');
-        }
-
-        if($ExistCPF->exists()){
+        } elseif($ExistCPF->exists()){
             echo "<script language='javascript' type='text/javascript'>
             alert('Esse CPF já foi registrado');</script>";
             return view('cadastros/cadastroManual');
-        }
-
-        if($ExistRG->exists()){
+        }elseif($ExistRG->exists()){
             echo "<script language='javascript' type='text/javascript'>
             alert('Esse RG já foi registrado');</script>";
             return view('cadastros/cadastroManual');
-        }
-        $data = [
-                    'nome' => $dados['nome'], 
-                    'cpf' => $dados['cpf'],
-                    'rg' => $dados['rg'],
-                    'dataNascimento' => $dados['dataNascimento'],
-                    'telefoneCelular' => $dados['telefoneCelular'],
-                    'rua' => $dados['rua'],
-                    'numero' => $dados['numero'],
-                    'complemento' => $dados['complemento'],
-                    'bairro' => $dados['bairro'],
-                    'cidade' => $dados['cidade'],
-                    'estado' => $dados['estado'],
-                    'email' => $dados['email'],
-                    'password' => $dados['password'],
-        ];
-        User::create($data);
+        }else{
+            $data = [
+                        'nome' => $dados['nome'], 
+                        'cpf' => $dados['cpf'],
+                        'rg' => $dados['rg'],
+                        'dataNascimento' => $dados['dataNascimento'],
+                        'telefone' => $dados['telefone'],
+                        'celular' => $dados['celular'],
+                        'rua' => $dados['rua'],
+                        'numero' => $dados['numero'],
+                        'complemento' => $dados['complemento'],
+                        'bairro' => $dados['bairro'],
+                        'cidade' => $dados['cidade'],
+                        'estado' => $dados['estado'],
+                        'email' => $dados['email'],
+                        'password' => $dados['password'],
+                        'sysactive' => 1,
+            ];
 
-        echo "<script language='javascript' type='text/javascript'>
-            alert('Usuário cadastrado com sucesso');</script>";
-            return view('login');
+            User::create($data);
+    
+                return view('cadastros/cadastroFinalizado');
+        }
     }
 
     public function consulta($userId){
