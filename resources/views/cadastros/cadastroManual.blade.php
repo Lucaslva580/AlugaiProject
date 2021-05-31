@@ -4,10 +4,9 @@
 
 @section('content')
 
-
 <button id="voltar" class="btn btn-primary btn-lg" onclick="window.location.href='/login'"><i class="fas fa-arrow-left"></i> Login</button>
 <link href="{{ asset('css/cadastroManual.css') }}" rel="stylesheet" type="text/css">
-<script src="{{ asset('js/cadastroManual.js') }}"></script>
+
 <body style="background-color:#1b98e0">
   <div class="container">
     <div class="row justify-content-center">
@@ -17,7 +16,9 @@
       <script type= "text/javascript">
       $("#inputCPF").mask("000.000.000-00");
       $("#inputRG").mask("00.000.000-0");
-      $("#inputTel").mask("(00) 00000-0000");
+      $("#inputTel").mask("(00) 0000-0000");
+      $("#inputCel").mask("(00) 00000-0000");
+      $("#inputZip").mask("00000-000");
       </script>
 
         <!-- Dados de endereço -->
@@ -45,8 +46,12 @@
                     </div>
                     <div class=row>
                       <div class="col-md-6">
-                        <label for="inputTel" class="form-label">Telefone/Celular*</label>
-                        <input type="phone" class="form-control" placeholder="(xx)xxxxx-xxxx" id="inputTel" name="telefoneCelular" required>
+                         <label for="inputCel" class="form-label">Celular*</label>
+                        <input type="phone" class="form-control" placeholder="(xx)xxxxx-xxxx" id="inputCel" name="celular" required>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="inputTel" class="form-label">Telefone</label>
+                        <input type="phone" class="form-control" placeholder="(xx)xxxx-xxxx" id="inputTel" name="telefone" required>
                       </div>
                       <div class="col-md-6">
                         <label for="inputCPF" class="form-label">CPF</label>
@@ -165,22 +170,20 @@
   </div>
 </body>
 
-<?php ?>
-
-<script>
+<script type="text/javascript">
   var inputPassword = $('#inputPassword');
   var olho = $("#olho");
 
   olho.mousedown(function() {
-    senha.attr("type", "text");
+    inputPassword.attr("type", "text");
   });
 
   olho.mouseup(function() {
-    senha.attr("type", "password");
+    inputPassword.attr("type", "password");
   });
 
-  $("#olho").mouseout(function() {
-    $("#inputPassword").attr("type", "password");
+  olho.mouseout(function() {
+    inputPassword.attr("type", "password");
   });
 
   $("#inputNumero").focusout(function() {

@@ -14,7 +14,7 @@
             <div class="card-body">
                 <div id='lower-side'>
                     <p id="message" class="card-text">Cadastro realizado com sucesso. Seja bem vindo à comunidade Alugaí!</p>
-                    <a href="http://127.0.0.1:8001/login" id="contBtn">Login</a>
+                    <a onclick="window.location.href='/login'" id="contBtn">Login</a>
                 </div>
             </div>
         </div>

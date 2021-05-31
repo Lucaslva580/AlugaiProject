@@ -22,7 +22,8 @@ class User extends Authenticatable
         'cpf',
         'rg' ,
         'dataNascimento',
-        'telefoneCelular',
+        'telefone',
+        'celular',
         'rua',
         'numero',
         'complemteno',
@@ -31,6 +32,7 @@ class User extends Authenticatable
         'estado',
         'email',
         'password',
+        'sysactive',
     ];
 
     /**
