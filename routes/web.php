@@ -17,8 +17,7 @@ Route::get('/login', function () {
     if (session()->get('sessao') == ""){
         return view('login');
       }  else {
-        echo"<script language='javascript' type='text/javascript'>
-               window.location.href='/';</script>";
+        return view('PesquisaProdutos');
       }
 });
 Route::get('/desloga', [SessionController::class, 'desloga']);
@@ -35,10 +34,10 @@ Route::get('/PesquisaProdutos', function () {
 Route::get('/', [HomeController::class, 'index']);
 
 
-// Route::get('/produtos/excluir/{userId}/{ProdutoID}', [ProdutosController::class, 'excluir']);
-Route::get('/produtos/adicionar/{name}/{email}/{senha}/', [ProdutosController::class, 'adiciona']);
-// Route::get('/produtos', [ProdutosController::class, 'index'])->name('produtao');;
-// Route::get('/produtos/alterar/{userId}/{ProdutoID}', [ProdutosController::class, 'index']);
+// Route::get('/produtos/excluir/{ProdutoID}', [ProdutosController::class, 'excluir']);
+// Route::get('/produtos/adicionar/{name}/{email}/{senha}/', [ProdutosController::class, 'adiciona']);
+Route::get('/produtos', [ProdutosController::class, 'index'])->name('produtao');;
+// Route::get('/produtos/alterar/{ProdutoID}', [ProdutosController::class, 'index']);
 
 Route::post('/usuarios/adicionar', [UserController::class, 'adiciona']);
 Route::get('/usuarios/consultar/{userId}', [UserController::class, 'consulta']);
