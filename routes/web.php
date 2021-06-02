@@ -30,8 +30,11 @@ Route::get('/PesquisaProdutos', function () {
     return view('PesquisaProdutos');
 });
 
+Route::get('/', function(){
+    return view('landingPage');
+});
+
 // Controllers
-Route::get('/', [HomeController::class, 'index']);
 
 
 // Route::get('/produtos/excluir/{ProdutoID}', [ProdutosController::class, 'excluir']);

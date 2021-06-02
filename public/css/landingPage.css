@@ -1,0 +1,29 @@
+/* body, html {
+  height: 100%;
+  margin:0;
+} */
+
+.bg {
+  background-repeat: no-repeat;
+  background-image: url(https://cdn.discordapp.com/attachments/837402031047180359/849472807989149716/image.png);
+  background-size: 110%;
+  margin: auto;
+}
+
+  #card1 {
+    
+    border-width: 0.2rem;
+    border-color: #8fafb1; 
+    margin-top: 1rem;
+    background-color: white;
+    border-radius: 2rem;
+    box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 10px 10px 0px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 10px 20px 0px rgba(0 0 0 / 40%);
+    -o-box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.1);
+    -ms-box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  footer{
+    height: 0px;
+  }

@@ -1,29 +1,35 @@
 body {
-    background: #1488EA;
+    background: #006494;
   }
   
- /* #card {
+ #card {
     position: absolute;
     width: 320px;
     display: block;
     margin: 40px;
     text-align: center;
     font-family: 'Source Sans Pro', sans-serif;
-  }  */
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    left: 365px;
+    top: 30px;
+
+  } 
   
   #upper-side {
     padding: 2em;
-    background-color: #8BC34A;
+    background-color: #006494;
     display: block;
     color: #fff;
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
+    width:97%;
   }
   
   #checkmark {
     font-weight: lighter;
-    fill: #fff;
-    margin: -3.5em auto auto 20px;
+    fill: #E8F1F2;
+    margin: -4em auto auto 20px;
   }
   
   #status {
@@ -37,7 +43,7 @@ body {
   
   #lower-side {
     padding: 2em 2em 5em 2em;
-    background: #fff;
+    background: #FFFFFF;
     display: block;
     border-bottom-right-radius: 8px;
     border-bottom-left-radius: 8px;
@@ -45,15 +51,14 @@ body {
   
   #message {
     margin-top: -.5em;
-    color: #757575;
-    letter-spacing: 1px;
+    color: #13293d;
   }
   
   #contBtn {
     position: relative;
-    top: 1.5em;
+    top: 2em;
     text-decoration: none;
-    background: #8bc34a;
+    background: #006494;
     color: #fff;
     margin: auto;
     padding: .8em 3em;
