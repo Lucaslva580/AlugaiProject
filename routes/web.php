@@ -31,7 +31,11 @@ Route::get('/PesquisaProdutos', function () {
 });
 
 Route::get('/', function(){
-    return view('landingPage');
+    return view('home');
+});
+
+Route::get('/produtos',function(){
+    return view('produtos');
 });
 
 // Controllers
@@ -39,7 +43,7 @@ Route::get('/', function(){
 
 // Route::get('/produtos/excluir/{ProdutoID}', [ProdutosController::class, 'excluir']);
 // Route::get('/produtos/adicionar/{name}/{email}/{senha}/', [ProdutosController::class, 'adiciona']);
-Route::get('/produtos', [ProdutosController::class, 'index'])->name('produtao');;
+// Route::get('/produtos', [ProdutosController::class, 'index']);
 // Route::get('/produtos/alterar/{ProdutoID}', [ProdutosController::class, 'index']);
 
 Route::post('/usuarios/adicionar', [UserController::class, 'adiciona']);

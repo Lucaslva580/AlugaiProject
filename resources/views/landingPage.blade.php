@@ -18,7 +18,7 @@
               <p>O site onde você</p>
             </div>
             <div>
-              <p>ECONOMIZA E GANHA DINHEIRO AO MESMO TEMPO</p>
+              <p>AQUI VOCÊ ECONOMIZA E GANHA DINHEIRO AO MESMO TEMPO</p>
             </div>
           </div>
         </div>
