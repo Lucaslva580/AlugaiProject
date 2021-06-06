@@ -1,35 +1,5 @@
-/* body, html {
-  height: 100%;
-  margin:0;
-} */
-
-/* .bg {
-  background-repeat: no-repeat;
-  background-image: url(https://cdn.discordapp.com/attachments/837402031047180359/849472807989149716/image.png);
-  background-size: 110%;
-  margin: auto;
-} */
-
-  /* #card1 {
-    
-    border-width: 0.2rem;
-    border-color: #8fafb1; 
-    margin-top: 1rem;
-    background-color: white;
-    border-radius: 2rem;
-    box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: 0 10px 10px 0px rgba(0, 0, 0, 0.1);
-    -webkit-box-shadow: 0 10px 20px 0px rgba(0 0 0 / 40%);
-    -o-box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.1);
-    -ms-box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.1);
-  } 
-
-  footer{
-    height: 0px;
-  } */
-
   #page-landing {
-    background: linear-gradient(329.54deg, #208ca1 0%, #05b48e 100%);
+    background: linear-gradient(329.54deg, #006494 0%, #e8f1f2 150%);
   
     min-height: 100vh;
     text-align: center;
@@ -42,10 +12,6 @@
     width: min(90%, 140rem);
   }
 
-  #ir{
-    src: ("../images/arrow.svg");
-   }
-  
   .location,
   h1,
   .visit p {
@@ -65,18 +31,18 @@
     animation-delay: 150ms;
   }
   
-  .visit a:hover {
-    background-color: #96feff;
+  .visit button:hover {
+    background-color: #84bc79;
   }
   
   .visit p {
     animation-delay: 200ms;
   }
   
-  .visit a {
+  .visit button {
     width: 8rem;
     height: 8rem;
-    background: #ffd666;
+    background: #14cee7;
   
     border: none;
     border-radius: 3rem;
@@ -88,6 +54,7 @@
   
     transition: background 200ms;
     animation-delay: 250ms;
+    color:#13293d
   }
   
   /* desktop version */
@@ -100,9 +67,19 @@
     }
   
     header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background: url(../images/logo.png) no-repeat 80% / clamp(3rem, 5vw, 6rem);
+    background-position: initial;
+    background-position-x: 34vw;
+    min-height: 5vw;
+    }
+
+    header img{
+      /* display: flex; */
+      /* align-items: left; */
+      justify-content: center;
     }
   
     .location,
@@ -139,8 +116,13 @@
       width: clamp(30rem, 20vw, 30rem);
     }
   
-    .visit a {
+    .visit button {
       margin: initial;
+      cursor:pointer;
+      font-size: 3rem;
+    }
+    title {
+      background: url(../images/favicon.ico);
     }
   }
   

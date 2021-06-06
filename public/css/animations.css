@@ -20,6 +20,15 @@ transform:translateY(0)
         }
     }
 
+    @keyframes left{
+        from{
+            transform: translateX(100%)
+        }
+        to{
+            transform:translateY(0)
+        }
+    }
+
     @keyframes appear{
         from{
 opacity:0;
@@ -42,5 +51,11 @@ opacity:1;
     .animate-appear{
         animation-name: appear;
         animation-duration: 300ms;
+        animation-fill-mode: backwards;
+    }
+
+    header{
+        animation-name:left;
+        animation-duration: 600ms;
         animation-fill-mode: backwards;
     }

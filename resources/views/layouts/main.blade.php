@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
+    <link href="{{ asset('storage/favicon.ico') }}"  rel="shortcut icon" type="image/x-icon"/>
     <title>@yield('title')</title>
     <link href="{{ asset('css/cadastroFinalizado.css') }}" rel="stylesheet" type="text/css">
     <script src="//code-sa1.jivosite.com/widget/oHcm1tfcUg" async></script>
@@ -19,7 +20,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@700&family=Pattaya&family=Yellowtail&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/c1066ac0af.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"> </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/js/adminlte.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/css/adminlte.min.css">
   </head>
   <body>
     @yield('content')
