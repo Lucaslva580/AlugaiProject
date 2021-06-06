@@ -1,4 +1,4 @@
-@extends('layouts.HeaderFooter')
+@extends('layouts.adminComHeader')
 
 @section('title', 'Alugaí')
 

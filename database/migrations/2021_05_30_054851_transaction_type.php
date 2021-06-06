@@ -13,18 +13,18 @@ class TransactionType extends Migration
      * @return void
      */
     public function up()
-    {Schema::create('transaction_type', function (Blueprint $table) {
+    {Schema::create('transaction_types', function (Blueprint $table) {
         $table->id();
         $table->string('transacao_via');
 
     });
-    DB::insert('insert into transaction_type (id, transacao_via) values (?, ?)', [1, 'Dinheiro']);
-    DB::insert('insert into transaction_type (id, transacao_via) values (?, ?)', [2, 'Boleto']);
-    DB::insert('insert into transaction_type (id, transacao_via) values (?, ?)', [3, 'Paypal']);
-    DB::insert('insert into transaction_type (id, transacao_via) values (?, ?)', [4, 'TED']);
-    DB::insert('insert into transaction_type (id, transacao_via) values (?, ?)', [5, 'PIX']);
-    DB::insert('insert into transaction_type (id, transacao_via) values (?, ?)', [6, 'Cartão de crédito']);
-    DB::insert('insert into transaction_type (id, transacao_via) values (?, ?)', [7, 'Outros']);    //
+    DB::insert('insert into transaction_types (id, transacao_via) values (?, ?)', [1, 'Dinheiro']);
+    DB::insert('insert into transaction_types (id, transacao_via) values (?, ?)', [2, 'Boleto']);
+    DB::insert('insert into transaction_types (id, transacao_via) values (?, ?)', [3, 'Paypal']);
+    DB::insert('insert into transaction_types (id, transacao_via) values (?, ?)', [4, 'TED']);
+    DB::insert('insert into transaction_types (id, transacao_via) values (?, ?)', [5, 'PIX']);
+    DB::insert('insert into transaction_types (id, transacao_via) values (?, ?)', [6, 'Cartão de crédito']);
+    DB::insert('insert into transaction_types (id, transacao_via) values (?, ?)', [7, 'Outros']);    //
     }
 
     /**
@@ -35,6 +35,6 @@ class TransactionType extends Migration
     public function down()
     {
         
-        Schema::dropIfExists('transaction_type');
+        Schema::dropIfExists('transaction_types');
     }
 }

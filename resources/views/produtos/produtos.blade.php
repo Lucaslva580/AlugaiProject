@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.comHeader')
 
 @section('title', 'Alugaí')
 

@@ -26,7 +26,8 @@ class Rentals extends Migration
         $table->date('negociation_end_date');
         $table->date('delivery_prentense_devolution_date');
         $table->date('delivery_end_date')->nullable();
-        
+        $table->timestamp('created_at')->nullable();
+        $table->timestamp('updated_at');
     });
         //
     }

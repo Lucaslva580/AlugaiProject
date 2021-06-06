@@ -13,18 +13,18 @@ class DeliveryType extends Migration
      * @return void
      */
     public function up()
-    {Schema::create('delivery_type', function (Blueprint $table) {
+    {Schema::create('delivery_types', function (Blueprint $table) {
         $table->id();
         $table->string('tipo_de_delivery');
 
     });
-    DB::insert('insert into delivery_type (id, tipo_de_delivery) values (?, ?)', [1, 'emMãos']);
-    DB::insert('insert into delivery_type (id, tipo_de_delivery) values (?, ?)', [2, 'correios']);
-    DB::insert('insert into delivery_type (id, tipo_de_delivery) values (?, ?)', [3, 'loggi']);
-    DB::insert('insert into delivery_type (id, tipo_de_delivery) values (?, ?)', [4, 'logbee']);
-    DB::insert('insert into delivery_type (id, tipo_de_delivery) values (?, ?)', [5, 'shippfy']);
-    DB::insert('insert into delivery_type (id, tipo_de_delivery) values (?, ?)', [6, 'james']);
-    DB::insert('insert into delivery_type (id, tipo_de_delivery) values (?, ?)', [7, 'outros']);
+    DB::insert('insert into delivery_types (id, tipo_de_delivery) values (?, ?)', [1, 'emMãos']);
+    DB::insert('insert into delivery_types (id, tipo_de_delivery) values (?, ?)', [2, 'correios']);
+    DB::insert('insert into delivery_types (id, tipo_de_delivery) values (?, ?)', [3, 'loggi']);
+    DB::insert('insert into delivery_types (id, tipo_de_delivery) values (?, ?)', [4, 'logbee']);
+    DB::insert('insert into delivery_types (id, tipo_de_delivery) values (?, ?)', [5, 'shippfy']);
+    DB::insert('insert into delivery_types (id, tipo_de_delivery) values (?, ?)', [6, 'james']);
+    DB::insert('insert into delivery_types (id, tipo_de_delivery) values (?, ?)', [7, 'outros']);
         //
     }
 
@@ -35,6 +35,6 @@ class DeliveryType extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('delivery_type');
+        Schema::dropIfExists('delivery_types');
     }
 }

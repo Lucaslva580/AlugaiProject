@@ -8,12 +8,9 @@ class SessionController extends Controller
 {
     public function SeLogado(Request $request){
         if (session()->get('sessao') != ""){
-            echo "<script language='javascript' type='text/javascript'> window.location
-            .href='/';</script>";
+            //retorna para a página requisitada
           }  else {
-            echo"<script language='javascript' type='text/javascript'>
-                    alert('Você precisa Logar primeiro');window.location
-                    .href='login';</script>";
+            //retorna para o login
           }
     }
 
@@ -23,9 +20,9 @@ class SessionController extends Controller
             return view('login');
         }  else {
             echo"<script language='javascript' type='text/javascript'>
-              return view('login');
-                    alert('Você precisa Logar primeiro');window.location
-                    .href='login';</script>";
+            alert('Você precisa Logar primeiro');window.location
+            .href='login';</script>";
+            return view('login');
           }
     }
 }

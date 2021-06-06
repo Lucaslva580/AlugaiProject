@@ -5,20 +5,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link href="{{ asset('storage/favicon.ico') }}"  rel="shortcut icon" type="image/x-icon"/>
-  <title>@yield('title')</title>
 
+<!-- CSRF Token -->
+<meta name="csrf-token" content="{{ csrf_token() }}">
+
+<link href="{{ asset('storage/favicon.ico') }}"  rel="shortcut icon" type="image/x-icon"/>
+<title>@yield('title')</title>
+<!-- Scripts -->
+
+<!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <script src="https://kit.fontawesome.com/c1066ac0af.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@700&family=Pattaya&family=Yellowtail&display=swap" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-  <link href="{{ asset('css/HeaderFooter.css') }}" rel="stylesheet">
+
+<!-- Styles -->
   <script src="{{ asset('site/jquery.js') }}"></script>
+  <link href="{{ asset('css/HeaderFooter.css') }}" rel="stylesheet">
   <link href="{{ asset('site/boostrap.css') }}" rel="stylesheet" type="text/css">
   <script src="{{ asset('site/bootstrap.js') }}"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@700&family=Pattaya&family=Yellowtail&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/c1066ac0af.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/js/adminlte.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/css/adminlte.min.css">
+
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed" data-panel-auto-height-mode="height">
@@ -37,13 +44,13 @@
       @if (session()->get('sessao') !="")
       <ul class="navbar-nav bd-navbar-nav flex-row">
         <li class="nav-item">
-          <a class="nav-link" href="/desloga">Logout</a>
+          <a class="nav-link" href="{{route('desloga')}}">Logout</a>
         </li>
       </ul>
       @else
       <ul class="navbar-nav bd-navbar-nav flex-row">
         <li class="nav-item">
-          <a class="nav-link" href="/login">Login</a>
+          <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
         </li>
       </ul>
       @endif

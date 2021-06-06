@@ -11,8 +11,6 @@
     <link href="{{ asset('css/sidebar.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/animations.css') }}" rel="stylesheet" type="text/css">
     <script src="https://kit.fontawesome.com/c1066ac0af.js" crossorigin="anonymous"></script>
-    <!-- <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"> -->
 
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
   </head>

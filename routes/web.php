@@ -10,50 +10,61 @@ use App\Http\Controllers\{
     UserController,
 };
 
-// Route::get('/', 'HomeController@index');
-Route::get('/posts', [PostController::class, 'index'] );
-// Views
+// Home
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Autenticação
+Route::post('/autentica', [AutenticaController::class, 'index']);
+
 Route::get('/login', function () {
     if (session()->get('sessao') == ""){
         return view('login');
-      }  else {
-        return view('PesquisaProdutos');
-      }
-});
-Route::get('/desloga', [SessionController::class, 'desloga']);
+    }  else {
+        return view('produtos/PesquisaProdutos');
+    }
+})->name('login');
 
-Route::get('/cadastroManual', function () {
-    return view('cadastros/cadastroManual');
-});
+Route::get('/desloga', [SessionController::class, 'desloga'])->name('desloga');
+
+
+// ProdutosControllers
+Route::get('/produtos', [ProdutosController::class, 'index']);
+Route::get('/produtos/adicionar/{ProdutoID}', [ProdutosController::class, 'adiciona']);
+Route::get('/produtos/excluir/{ProdutoID}', [ProdutosController::class, 'excluir']);
+Route::get('/produtos/alterar/{ProdutoID}', [ProdutosController::class, 'index']);
+
+// ProdutosViews
+Route::get('/produtos',function(){
+    return view('produtos/produtos');
+})->name('produtos');
 
 Route::get('/PesquisaProdutos', function () {
-    return view('PesquisaProdutos');
-});
+    return view('produtos/PesquisaProdutos');
+})->name('/PesquisaProdutos');
 
-Route::get('/', function(){
-    return view('home');
-});
-
-Route::get('/produtos',function(){
-    return view('produtos');
-});
-
-// Controllers
-
-
-// Route::get('/produtos/excluir/{ProdutoID}', [ProdutosController::class, 'excluir']);
-// Route::get('/produtos/adicionar/{name}/{email}/{senha}/', [ProdutosController::class, 'adiciona']);
-// Route::get('/produtos', [ProdutosController::class, 'index']);
-// Route::get('/produtos/alterar/{ProdutoID}', [ProdutosController::class, 'index']);
-
+// UsuáriosControllers
 Route::post('/usuarios/adicionar', [UserController::class, 'adiciona']);
 Route::get('/usuarios/consultar/{userId}', [UserController::class, 'consulta']);
 Route::delete('/usuarios/excluir', [UserController::class, 'exclui']);
 
-Route::post('/autentica', [AutenticaController::class, 'index']);
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// UsuáriosViews
+Route::get('/cadastroUsuario', function () {
+    return view('cadastros/cadastroUsuario');
+})->name('cadastroUsuario');
 
 Route::get('/cadastroFinalizado', function () {
     return view('cadastros/cadastroFinalizado');
 });
+
+// Home e indefinidos
+Route::get('/', function(){
+    return view('home');
+});
+
+Route::get('/posts', [PostController::class, 'index'] );
+
+
+
+
+
+

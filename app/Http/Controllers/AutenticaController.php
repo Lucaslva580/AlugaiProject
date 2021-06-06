@@ -4,9 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Session;
-
 
 class AutenticaController extends Controller
 {
@@ -30,7 +27,7 @@ class AutenticaController extends Controller
             $request->session()->put('sessao', $UserID.$email);
             $sessao = $request->session()->get('sessao');
             if (isset($sessao)){
-                return view('PesquisaProdutos',[]);
+                return view('produtos/PesquisaProdutos',[]);
             } else {
                 print_r("alo alo");
             }

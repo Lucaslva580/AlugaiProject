@@ -17,15 +17,15 @@ class UserController extends Controller
         if($ExistEmail->exists()){
             echo "<script language='javascript' type='text/javascript'>
             alert('Esse email já foi registrado, use um email diferente ou recupere sua senha');</script>";
-            return view('cadastros/cadastroManual');
+            return view('cadastros/cadastroUsuario');
         } elseif($ExistCPF->exists()){
             echo "<script language='javascript' type='text/javascript'>
             alert('Esse CPF já foi registrado');</script>";
-            return view('cadastros/cadastroManual');
+            return view('cadastros/cadastroUsuario');
         }elseif($ExistRG->exists()){
             echo "<script language='javascript' type='text/javascript'>
             alert('Esse RG já foi registrado');</script>";
-            return view('cadastros/cadastroManual');
+            return view('cadastros/cadastroUsuario');
         }else{
             $data = [
                         'nome' => $dados['nome'], 

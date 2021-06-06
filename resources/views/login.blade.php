@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.semHeader')
 
 @section('title', 'Alugaí')
 
@@ -37,7 +37,7 @@
               </div>
             </div>
             <Button class="btn btn-lg btn-success" type="submit" value="Entrar" id="entrar" name="Entrar">Entrar</Button><br>
-            <a class="btn btn-link" href="{{url ('/cadastroManual')}}">{{ __('Criar cadastro')}}</a><br>
+            <a class="btn btn-link" href="{{url ('/cadastroUsuario')}}">{{ __('Criar cadastro')}}</a><br>
             <a class="btn btn-link" href="">
               {{ __('Esqueceu sua senha?') }}
             </a>

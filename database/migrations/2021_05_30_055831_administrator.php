@@ -12,11 +12,13 @@ class Administrator extends Migration
      * @return void
      */
     public function up()
-    {Schema::create('administrator', function (Blueprint $table) {
+    {Schema::create('administrators', function (Blueprint $table) {
         $table->id();
         $table->string('name');
         $table->string('corporate_email')->unique();
         $table->string('password');
+        $table->timestamp('created_at')->nullable();
+        $table->timestamp('updated_at');
         });
         
     }
@@ -28,6 +30,6 @@ class Administrator extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('administrator');
+        Schema::dropIfExists('administrators');
     }
 }

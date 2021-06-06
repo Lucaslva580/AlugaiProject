@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.semHeader')
 
 @section('title', 'Cadastroalugai')
 

@@ -18,10 +18,8 @@ class Products extends Migration
         $table->string('category');
         $table->float('product_value');
         $table->string('description');
-
-        
-        
-        
+        $table->timestamp('created_at')->nullable();
+        $table->timestamp('updated_at');
     });
         //
     }
