@@ -11,7 +11,7 @@
 <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 <!-- Scripts -->
-
+    <script src="{{ asset('site/jquery.js') }}"></script>
 <!-- Fonts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -23,9 +23,8 @@
     <link href="{{ asset('css/cadastroFinalizado.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
     <link href="{{ asset('css/cadastroManual.css') }}" rel="stylesheet" type="text/css">
-    <script src="{{ asset('site/jquery.js') }}"></script>
-    <link href="{{ asset('site/boostrap.css') }}" rel="stylesheet" type="text/css">
     <script src="{{ asset('site/bootstrap.js') }}"></script>
+    <script src="{{ asset('site/bootstrap.css') }}" rel="stylesheet" type="text/css"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/css/adminlte.min.css">
     <script src="//code-sa1.jivosite.com/widget/oHcm1tfcUg" async></script>

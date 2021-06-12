@@ -47,8 +47,8 @@
               </div>
               <div class="row">
                 <div class="col-md-10 inputCadastro">
-                  <label for="valorProduto" class="form-label">Valor(diária)</label>
-                  <input type="number" class="form-control is-valid" id="valorProduto" name="valorProduto" placeholder="R$" form="formProduto" required></input>
+                  <label for="valorProduto" class="form-label" >Valor(diária)</label>
+                  <input type="text" class="form-control is-valid valorProduto" id="valorProduto" name="valorProduto" placeholder="R$" form="formProduto" required>
                   <div class="invalid-feedback">Insira o valor diária</div>
                 </div>
               </div>
@@ -57,8 +57,8 @@
           <div class="col">
             <div class="mb-3 inputCadastroUpload">
               <label for="imagens" class="form-label ">Selecione as fotos do seu produto</label>
-              <input type="file" class="form-control" name="imagens" aria-label="file example" required>
-              <div class="invalid-feedback">Example invalid form file feedback</div>
+              <input type="file" class="form-control" name="imagens"  aria-label="file example" required>
+              <div class="invalid-feedback">Insira um arquivo de imagem válido</div>
             </div>
             <div class="mb-3">
           <button class="btn btn-primary botaoCadastrar" type="submit">Cadastrar produto</button>
@@ -72,5 +72,9 @@
     </div>
   </div>
 </div>
+
+<script type= "text/javascript">
+  $("#valorProduto").mask("000.000.000-00");
+</script>
 
 @endsection
