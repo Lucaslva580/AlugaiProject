@@ -17,7 +17,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::post('/autentica', [AutenticaController::class, 'index']);
 
 Route::get('/login', function () {
-    if (session()->get('sessao') == ""){
+    if (session('sessionHash') == null){
         return view('login');
     }  else {
         return view('produtos/PesquisaProdutos');
@@ -29,7 +29,7 @@ Route::get('/desloga', [SessionController::class, 'desloga'])->name('desloga');
 
 // ProdutosControllers
 Route::get('/produtos', [ProdutosController::class, 'index']);
-Route::get('/produtos/adicionar/{ProdutoID}', [ProdutosController::class, 'adiciona']);
+Route::post('/produtos/adicionar', [ProdutosController::class, 'adicionar'])->name('adicionar');
 Route::get('/produtos/excluir/{ProdutoID}', [ProdutosController::class, 'excluir']);
 Route::get('/produtos/alterar/{ProdutoID}', [ProdutosController::class, 'index']);
 
@@ -67,9 +67,3 @@ Route::get('/', function(){
 });
 
 Route::get('/posts', [PostController::class, 'index'] );
-
-
-
-
-
-

@@ -1,0 +1,36 @@
+.content {
+  position: fixed;
+  background: linear-gradient(329.54deg, #006494 0%, #e8f1f2 150%);
+  width: 100%;
+  height: 100%;
+}
+
+.row{
+  margin-bottom: 5rem;
+}
+
+.inputCadastro, .botaoCadastrar{
+  margin-left: 4rem;
+}
+
+#cardProdutos{
+  margin:3rem;
+  height: 100%;
+  border-radius:2rem;
+  border-color: #8fafb1; 
+  margin-top: 2rem;
+  border-radius: 2rem;
+  box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 10px 10px 0px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 10px 20px 0px rgba(0 0 0 / 40%);
+  -o-box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.1);
+  -ms-box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+.divCard{
+  height: 80%;
+}
+
+.inputCadastroUpload{
+  margin-left: 0%;
+}

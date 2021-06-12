@@ -15,8 +15,8 @@ class SessionController extends Controller
     }
 
     public function desloga(){
-        if (session()->get('sessao') != ""){
-            session()->forget('sessao');
+        if (session('sessionHash')){
+            session()->forget('sessionHash');
             return view('login');
         }  else {
             echo"<script language='javascript' type='text/javascript'>
