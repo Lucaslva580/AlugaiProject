@@ -2,26 +2,32 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Validation\Rules\Unique;
 
 class ProdutosController extends Controller
 {
-    public function adiciona($name, $email, $senha ){
-        // dd($email, $senha);
-        // $dados = $request ->all();
-        // $UserID = $dados['UserID'];
-        // $ProdutoID = $dados['ProdutoID'];
-        // DB::insert('insert into products (name, email, password) values (":name", ":email" , ":senha" ) ', ['name' => $name,'email'=> $email, 'senha' => $senha]);
-        print_r("Adicionado");
-        // DB::insert('select * from users where email = :email and password = :senha', ['email' => $email, 'senha'=>$senha]);
+    public function adicionar(Request $request){
+        $path = $request->file('imagens')->store('files');  
+        $dados = $request->all();
 
-        // $dados = [
-        //     'NomeProduto'=>$NomeProduto::all(),
-        //     'categoria'=>$categoria::all(),
-        //     'UF'=>$UF
-        // ];
-        // return view('produtos', $dados);
+        $data = [
+            'userId' => session('id'),
+            'name' => $dados['nomeProduto'],
+            'category' => $dados['categoriaProduto'],
+            'product_value' => $dados['valorProduto'],
+            'description' => $dados['descricaoProduto'],
+            'image' => $path,
+        ];
+
+        Product::create($data);
+
+        echo"<script language='javascript' type='text/javascript'>
+            alert('Cadastro realizado');</script>";
+
+        return view('produtos/PesquisaProdutos');
     }
 
     public function excluir($UserID, $ProdutoID){

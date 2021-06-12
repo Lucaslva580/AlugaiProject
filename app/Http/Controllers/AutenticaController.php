@@ -17,16 +17,17 @@ class AutenticaController extends Controller
             "entrar" => $entrar = $request->Entrar,
         ];
         if (isset($entrar)) {
-        $results = DB::select('select * from users where email = :email and password = :senha', ['email' => $email, 'senha'=>$senha]);
+        $results = DB::select('select * from users where email = :email and password = :senha and sysactive=1', ['email' => $email, 'senha'=>$senha]);
         if (DB::table('users')->where('email', $email)->where('password', $senha)->doesntExist()){
             echo"<script language='javascript' type='text/javascript'>
             alert('Login e/ou senha incorretos');window.location
             .href='login';</script>";
         }else{
             $UserID = $results[0]->id;
-            $request->session()->put('sessao', $UserID.$email);
-            $sessao = $request->session()->get('sessao');
-            if (isset($sessao)){
+            $nome = $results[0]->nome;
+            session(['id' => $UserID, 'userName' => $nome, 'sessionHash' => $UserID.$email]);
+            // $request->session()->put('sessao', $UserID.$email);
+            if (session('sessionHash') !== null){
                 return view('produtos/PesquisaProdutos',[]);
             } else {
                 print_r("alo alo");

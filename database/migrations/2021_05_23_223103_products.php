@@ -14,10 +14,12 @@ class Products extends Migration
     public function up()
     {Schema::create('products', function (Blueprint $table) {
         $table->id();
+        $table->integer('userId');
         $table->string('name')->index();
         $table->string('category');
         $table->float('product_value');
         $table->string('description');
+        $table->string("image")->nullable();
         $table->timestamp('created_at')->nullable();
         $table->timestamp('updated_at');
     });

@@ -24,6 +24,7 @@
   <script src="{{ asset('site/jquery.js') }}"></script>
   <link href="{{ asset('site/boostrap.css') }}" rel="stylesheet" type="text/css">
   <script src="{{ asset('site/bootstrap.js') }}"></script>
+  <link href="{{ asset('css/cadastroProdutos.css') }}" rel="stylesheet" type="text/css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
   <script src="//code-sa1.jivosite.com/widget/oHcm1tfcUg" async></script>
@@ -41,16 +42,19 @@
         <li class="nav-item d-none d-sm-inline-block">
           <a href="/" class="nav-link"><i class="fas fa-home"></i></a>
         </li>
+        @if (session('sessionHash') !== null)
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Perfil</a>
           <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
             <li><a class="dropdown-item" href="#">Meu perfil</a></li>
             <li><a class="dropdown-item" href="#">Meus produtos</a></li>
+            <li><a class="dropdown-item" href="{{ route('produtos') }}">Cadastrar produtos</a></li>
             <li><a class="dropdown-item" href="#">Minhas locações</a></li>
             <li><a class="dropdown-item" href="#">Configurações</a></li>
           </ul>
         </li>
-        @if (session()->get('sessao') !="")
+        @endif
+        @if (session('sessionHash') !== null)
         <ul class="navbar-nav bd-navbar-nav flex-row">
           <li class="nav-item">
             <a class="nav-link" href="{{ route('desloga') }}">Logout</a>

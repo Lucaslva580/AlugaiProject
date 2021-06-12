@@ -100,12 +100,11 @@
 
                         use Illuminate\Support\Facades\DB;
 
-                        $Estados = DB::table('states')->get('UF')->sortBy('UF');
+                        $Estados = DB::table('states')->get('*')->sortBy('UF');
                         ?>
                         <select id="inputState" class="form-select" name="estado">
-                        @foreach($Estados as $Estado) {
-                        "<option value='{{$Estado->UF}}'>{{$Estado->UF}}</option>";
-                        }
+                        @foreach($Estados as $Estado)
+                        <option value='{{$Estado->id}}'>{{$Estado->UF}}</option>
                         @endforeach
                         </select>
                       </div>

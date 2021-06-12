@@ -1,49 +1,76 @@
-@extends('layouts.comHeader')
+@extends('layouts.adminComHeader')
 
 @section('title', 'Alugaí')
 
 @section('content')
 
-<h1> Produtos </h1>
 <div class="content">
-  <form class="was-validated">
-  <div class="row" style="margin-bottom:1rem">
-    <div class="col-md-4">
-      <label for="validationServer01" class="form-label">Nome do produto</label>
-      <input type="text" class="form-control is-valid" id="validationServer01" required>
-      <div class="invalid-feedback">Coloque o nome do seu produto</div>
+  <div class="row justify-content-center divCard">
+    <div class="card text-dark mb-9 col-9" id="cardProdutos">
+      <div id="title">
+        <h1 class="text-center" style="margin-top:2rem"> Produtos </h1>
+      </div>
+      <form id="formProduto" action="{{ route('adicionar') }}" method="POST" enctype="multipart/form-data" class="was-validated">
+        @csrf
+        <div class="row">
+          <div class="col">
+            <div class="row">
+              <div class="col-md-10 inputCadastro">
+                <label for="nomeProduto" class="form-label">Nome do produto</label>
+                <input type="text" class="form-control is-valid" id="nomeProduto" name="nomeProduto" required>
+                <div class="invalid-feedback">Coloque o nome do seu produto</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="row">
+                <div class="col-md-10 inputCadastro">
+                  <label for="categoriaProduto" class="form-label">Categoria</label>
+                    <?php
+                    use Illuminate\Support\Facades\DB;
+                        $Categories = DB::table('categories')->get('*')->sortBy('categoria');
+                        ?>
+                        <select name="categoriaProduto" id="categoriaProduto" class="form-select" required aria-label="select example">
+                        <option value="">Selecione</option>
+                        @foreach($Categories as $categorie)
+                        <option value='{{$categorie->id}}'>{{$categorie->categoria}}</option>
+                        @endforeach
+                  </select>
+                  <div class="invalid-feedback">Escolha a categoria do seu produto</div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-10 inputCadastro">
+                  <label for="descricaoProduto" class="form-label">Descrição do seu produto</label>
+                  <textarea type="text" class="form-control is-valid" id="descricaoProduto" name="descricaoProduto" placeholder="Descreva com a máximo de detalhes sobre o seu produto" form="formProduto" required></textarea>
+                  <div class="invalid-feedback">Descreva seu produto</div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-10 inputCadastro">
+                  <label for="valorProduto" class="form-label">Valor(diária)</label>
+                  <input type="number" class="form-control is-valid" id="valorProduto" name="valorProduto" placeholder="R$" form="formProduto" required></input>
+                  <div class="invalid-feedback">Insira o valor diária</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="mb-3 inputCadastroUpload">
+              <label for="imagens" class="form-label ">Selecione as fotos do seu produto</label>
+              <input type="file" class="form-control" name="imagens" aria-label="file example" required>
+              <div class="invalid-feedback">Example invalid form file feedback</div>
+            </div>
+            <div class="mb-3">
+          <button class="btn btn-primary botaoCadastrar" type="submit">Cadastrar produto</button>
+        </div>
+      </form>
+          </div>
+        </div>
+
+
+
     </div>
   </div>
-    <div class="row" style="margin-bottom:1rem">
-      <div class="col-md-4">
-        <select class="form-select" required aria-label="select example">
-          <option value="">Categoria</option>
-          <option value="1">Ferramentas</option>
-          <option value="2">Artigos de esporte</option>
-          <option value="3">Brinquedos</option>
-          <option value="4">Utensilios</option>
-          <option value="5">Veículos</option>
-        </select>
-        <div class="invalid-feedback">Example invalid select feedback</div>
-      </div>
-    </div>
-  
-      <label for="validationTextarea" class="form-label">Descrição do seu produto</label>
-      <textarea class="form-control is-invalid" id="validationTextarea" placeholder="Descreva com a máximo de detalhes sobre o seu produto" required></textarea>
-      <div class="invalid-feedback">
-        Por favor descreva seu produto
-      </div>
-    </div>
-  
-    <div class="mb-3">
-      <input type="file" class="form-control" aria-label="file example" required>
-      <div class="invalid-feedback">Example invalid form file feedback</div>
-    </div>
-    
-    <div class="mb-3">
-      <button class="btn btn-primary" type="submit" disabled>Cadastrar produto</button>
-    </div>
-  </form>
 </div>
 
 @endsection
