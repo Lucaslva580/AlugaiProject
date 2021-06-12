@@ -56,6 +56,11 @@ Route::get('/cadastroFinalizado', function () {
     return view('cadastros/cadastroFinalizado');
 });
 
+Route::get('/perfil', function () {
+    return view('usuarios/perfil');
+})->name('perfil');
+
+
 // Home e indefinidos
 Route::get('/', function(){
     return view('home');
