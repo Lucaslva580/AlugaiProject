@@ -63,8 +63,8 @@
           </div>
           <div class="col" style="align-self: center;">
             <div class="mb-3 inputCadastroUpload">
-              <label for="imagens" class="form-label ">Selecione as fotos do seu produto</label>
-              <input type="file" class="form-control" name="imagens" aria-label="file example" required>
+              <label for="formFileMultiple" class="form-label ">Selecione as fotos do seu produto</label>
+              <input type="file" class="form-control" name="imagens[]" aria-label="file example" required multiple>
               <div class="invalid-feedback">Insira um arquivo de imagem válido</div>
             </div>
             <div class="mb-3">

@@ -67,7 +67,4 @@
       </div>
       <!-- /.card -->
 
-
-    <!-- /.content -->
-
 @endsection

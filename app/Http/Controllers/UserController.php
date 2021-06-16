@@ -55,12 +55,11 @@ class UserController extends Controller
     if (session('sessionHash') == null){
         return view('login');
     }else{
-        return view('usuarios/perfil');
-    }
-        // $results = DB::table('users')->find($userId);
-        // print_r($results);
+        $dadosperfil = DB::select("SELECT u.*,( select count(id) from products where userId=3) as qtdprodutos,(select date_format(created_at, '%d/%c/%y')) as desde from users u where u.id=3");
 
-        // return view('produtos', $results);
+        return view('usuarios/perfil', compact('dadosperfil'));
+    }
+
     }
 
     public function Exclui($userId){

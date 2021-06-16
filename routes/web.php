@@ -44,10 +44,11 @@ Route::get('/adicionar',function(){
 })->name('adicionaProdutos');
 
 // UsuáriosControllers
-Route::post('/usuarios/adicionar', [UserController::class, 'adiciona']);
-Route::get('/usuarios/consultar', [UserController::class, 'consulta'])->name('consultaSessao');
-Route::delete('/usuarios/excluir', [UserController::class, 'exclui']);
-
+Route::prefix('usuarios')->group(function () {
+    Route::post('/usuarios/adicionar', [UserController::class, 'adiciona']);
+    Route::get('/usuarios/consultar', [UserController::class, 'consulta'])->name('consultaPerfil');
+    Route::delete('/usuarios/excluir', [UserController::class, 'exclui']);
+});
 // UsuáriosViews
 Route::get('/cadastroUsuario', function () {
     return view('cadastros/cadastroUsuario');

@@ -23,6 +23,7 @@
   <script src="{{ asset('site/bootstrap.js') }}"></script>
   <script src="{{ asset('site/bootstrap.css') }}" rel="stylesheet" type="text/css"></script>
   <link href="{{ asset('css/cadastroProdutos.css') }}" rel="stylesheet" type="text/css">
+  <link href="{{ asset('css/perfil.css') }}" rel="stylesheet" type="text/css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
   <!-- AdminLayout -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/css/adminlte.min.css">
@@ -54,7 +55,7 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Perfil</a>
           <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
-            <li><a class="dropdown-item" href="{{ route('consultaSessao') }}">Meu perfil</a></li>
+            <li><a class="dropdown-item" href="{{ route('consultaPerfil') }}">Meu perfil</a></li>
             <li><a class="dropdown-item" href="#">Meus produtos</a></li>
             <li><a class="dropdown-item" href="{{ route('adicionaProdutos') }}">Cadastrar produtos</a></li>
             <li><a class="dropdown-item" href="#">Minhas locações</a></li>
