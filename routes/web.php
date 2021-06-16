@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{
-    HomeController,
     AutenticaController,
     PostController,
     ProdutosController,
@@ -28,23 +27,25 @@ Route::get('/desloga', [SessionController::class, 'desloga'])->name('desloga');
 
 
 // ProdutosControllers
-Route::get('/produtos', [ProdutosController::class, 'index']);
-Route::post('/produtos/adicionar', [ProdutosController::class, 'adicionar'])->name('adicionar');
-Route::get('/produtos/excluir/{ProdutoID}', [ProdutosController::class, 'excluir']);
-Route::get('/produtos/alterar/{ProdutoID}', [ProdutosController::class, 'index']);
+Route::prefix('produtos')->group(function () {
+    Route::get('/lista', [ProdutosController::class, 'index'])->name('lista');
+    Route::post('/adicionar', [ProdutosController::class, 'adicionar'])->name('adicionar');
+    Route::get('/excluir/{ProdutoID}', [ProdutosController::class, 'excluir'])->name('excluir');
+    Route::get('/alterar/{ProdutoID}', [ProdutosController::class, 'index'])->name('alterar');
+});
 
 // ProdutosViews
-Route::get('/produtos',function(){
-    return view('produtos/produtos');
-})->name('produtos');
-
-Route::get('/PesquisaProdutos', function () {
-    return view('produtos/PesquisaProdutos');
-})->name('/PesquisaProdutos');
+Route::get('/adicionar',function(){
+    if (session('sessionHash') == null){
+        return view('login');
+    }else{
+        return view('produtos/adicionaProdutos');
+    };
+})->name('adicionaProdutos');
 
 // UsuáriosControllers
 Route::post('/usuarios/adicionar', [UserController::class, 'adiciona']);
-Route::get('/usuarios/consultar/{userId}', [UserController::class, 'consulta']);
+Route::get('/usuarios/consultar', [UserController::class, 'consulta'])->name('consultaSessao');
 Route::delete('/usuarios/excluir', [UserController::class, 'exclui']);
 
 // UsuáriosViews
@@ -56,7 +57,7 @@ Route::get('/cadastroFinalizado', function () {
     return view('cadastros/cadastroFinalizado');
 });
 
-Route::get('/perfil', function () {
+Route::post('/perfil', function () {
     return view('usuarios/perfil');
 })->name('perfil');
 

@@ -8,7 +8,7 @@
   <div class="row justify-content-center divCard">
     <div class="card text-dark mb-9 col-9" id="cardProdutos">
       <div id="title">
-        <h1 class="text-center" style="margin-top:2rem"> Produtos </h1>
+        <h1 class="text-center" style="margin-top:2rem"> Cadastro de Produtos </h1>
       </div>
       <form id="formProduto" action="{{ route('adicionar') }}" method="POST" enctype="multipart/form-data" class="was-validated">
         @csrf
@@ -25,15 +25,15 @@
               <div class="row">
                 <div class="col-md-10 inputCadastro">
                   <label for="categoriaProduto" class="form-label">Categoria</label>
-                    <?php
-                    use Illuminate\Support\Facades\DB;
-                        $Categories = DB::table('categories')->get('*')->sortBy('categoria');
-                        ?>
-                        <select name="categoriaProduto" id="categoriaProduto" class="form-select" required aria-label="select example">
-                        <option value="">Selecione</option>
-                        @foreach($Categories as $categorie)
-                        <option value='{{$categorie->id}}'>{{$categorie->categoria}}</option>
-                        @endforeach
+                  <?php
+                  use Illuminate\Support\Facades\DB;
+                  $Categories = DB::table('categories')->get('*')->sortBy('categoria');
+                  ?>
+                  <select name="categoriaProduto" id="categoriaProduto" class="form-select" required aria-label="select example">
+                    <option value="">Selecione</option>
+                    @foreach($Categories as $categorie)
+                    <option value='{{$categorie->id}}'>{{$categorie->categoria}}</option>
+                    @endforeach
                   </select>
                   <div class="invalid-feedback">Escolha a categoria do seu produto</div>
                 </div>
@@ -47,34 +47,40 @@
               </div>
               <div class="row">
                 <div class="col-md-10 inputCadastro">
-                  <label for="valorProduto" class="form-label" >Valor(diária)</label>
-                  <input type="text" class="form-control is-valid valorProduto" id="valorProduto" name="valorProduto" placeholder="R$" form="formProduto" required>
-                  <div class="invalid-feedback">Insira o valor diária</div>
+                    <label for="valorProduto" class="form-label">Valor(diária)</label>
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">R$</span>
+                    </div>
+                    <input type="text" class="form-control is-valid valorProduto" id="valorProduto" name="valorProduto" placeholder="00,00" form="formProduto" required>
+                    <div class="invalid-feedback">Recomendamos que a diária seja aproxidamente o valor do seu produto divido por 60</div>
+                    <div class="input-group-append">
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col">
+          <div class="col" style="align-self: center;">
             <div class="mb-3 inputCadastroUpload">
               <label for="imagens" class="form-label ">Selecione as fotos do seu produto</label>
-              <input type="file" class="form-control" name="imagens"  aria-label="file example" required>
+              <input type="file" class="form-control" name="imagens" aria-label="file example" required>
               <div class="invalid-feedback">Insira um arquivo de imagem válido</div>
             </div>
             <div class="mb-3">
-          <button class="btn btn-primary botaoCadastrar" type="submit">Cadastrar produto</button>
-        </div>
+              <button class="btn btn-primary botaoCadastrar" type="submit">Cadastrar produto</button>
+            </div>
       </form>
-          </div>
-        </div>
-
-
-
     </div>
   </div>
 </div>
+</div>
+</div>
 
-<script type= "text/javascript">
-  $("#valorProduto").mask("000.000.000-00");
+<script type="text/javascript">
+  $('.valorProduto').mask('000.000.000.000.000,00', {
+    reverse: true
+  });
 </script>
 
 @endsection

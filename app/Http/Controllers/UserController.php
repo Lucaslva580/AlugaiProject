@@ -51,10 +51,14 @@ class UserController extends Controller
         }
     }
 
-    public function consulta($userId){
-
-        $results = DB::table('users')->find($userId);
-        print_r($results);
+    public function consulta(){
+    if (session('sessionHash') == null){
+        return view('login');
+    }else{
+        return view('usuarios/perfil');
+    }
+        // $results = DB::table('users')->find($userId);
+        // print_r($results);
 
         // return view('produtos', $results);
     }

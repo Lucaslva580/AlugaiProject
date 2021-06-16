@@ -16,7 +16,8 @@ class Product extends Model
         'category',
         'product_value',
         'description',
-        'image'
+        'image',
+        'sys_active',
     ];
 
 }

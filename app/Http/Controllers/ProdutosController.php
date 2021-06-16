@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rules\Unique;
 
@@ -13,24 +14,39 @@ class ProdutosController extends Controller
         $path = $request->file('imagens')->store('files');  
         $dados = $request->all();
 
+        $valorTratado = str_replace(',','.',$dados['valorProduto']);
+
         $data = [
             'userId' => session('id'),
             'name' => $dados['nomeProduto'],
             'category' => $dados['categoriaProduto'],
-            'product_value' => $dados['valorProduto'],
+            'product_value' => $valorTratado,
             'description' => $dados['descricaoProduto'],
             'image' => $path,
+            'sys_active' => 1,
         ];
 
         Product::create($data);
 
-        echo"<script language='javascript' type='text/javascript'>
-            alert('Cadastro realizado');</script>";
+        return view('cadastros/cadastroProdutoFinalizado');
 
-        return view('produtos/PesquisaProdutos');
+    }
+    
+    public function index(){
+
+        $produtos = DB::table('products')
+        ->leftJoin('users', 'users.id', '=', 'products.userId')
+        ->leftjoin('categories', 'categories.id', '=', 'products.category')
+        ->select('products.*', 'users.*', 'categories.categoria')
+        ->where('products.sys_active','=','1')
+        ->orderByDesc('products.created_at')
+        ->paginate(6);
+
+          return view('produtos/PesquisaProdutos', compact('produtos'));
     }
 
     public function excluir($UserID, $ProdutoID){
         echo 'Usuario: '.$UserID.' Produto:'.$ProdutoID;
     }
+
 }

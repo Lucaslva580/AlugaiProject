@@ -29,9 +29,9 @@
           <section class="visit">
             <p style="color:#13293d"  class="animate-up">Alugue objetos úteis no dia a dia por um preço acessível</p>
 
-            <button onclick="window.location.href='/PesquisaProdutos'" class="animate-up">
+            <a href="{{ route('lista') }}" class="animate-up">
               <i class="fas fa-arrow-right"></i>
-            </button>
+            </a>
           </section>
         </main>
       </div>

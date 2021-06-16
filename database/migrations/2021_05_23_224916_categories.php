@@ -18,13 +18,13 @@ class Categories extends Migration
         $table->string('categoria');
 
     });
-    DB::insert('insert into categories (id, categoria) values (?, ?)', [1, 'ferramentas']);
-    DB::insert('insert into categories (id, categoria) values (?, ?)', [2, 'artigosDeEsporte']);
-    DB::insert('insert into categories (id, categoria) values (?, ?)', [3, 'utensilios']);
-    DB::insert('insert into categories (id, categoria) values (?, ?)', [4, 'brinquedos']);
-    DB::insert('insert into categories (id, categoria) values (?, ?)', [5, 'veiculos']);
-    DB::insert('insert into categories (id, categoria) values (?, ?)', [6, 'aparelhosEletronicos']);
-    DB::insert('insert into categories (id, categoria) values (?, ?)', [7, 'outros']);
+    DB::insert('insert into categories (id, categoria) values (?, ?)', [1, 'Ferramentas']);
+    DB::insert('insert into categories (id, categoria) values (?, ?)', [2, 'Artigos de Esporte']);
+    DB::insert('insert into categories (id, categoria) values (?, ?)', [3, 'Utensílios']);
+    DB::insert('insert into categories (id, categoria) values (?, ?)', [4, 'Brinquedos']);
+    DB::insert('insert into categories (id, categoria) values (?, ?)', [5, 'Veículos']);
+    DB::insert('insert into categories (id, categoria) values (?, ?)', [6, 'Aparelhos Eletrônicos']);
+    DB::insert('insert into categories (id, categoria) values (?, ?)', [7, 'Outros']);
     }
     
 

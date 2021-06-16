@@ -31,7 +31,7 @@
     animation-delay: 150ms;
   }
   
-  .visit button:hover {
+  .visit a:hover {
     background-color: #84bc79;
   }
   
@@ -39,7 +39,7 @@
     animation-delay: 200ms;
   }
   
-  .visit button {
+  .visit a {
     width: 8rem;
     height: 8rem;
     background: #14cee7;
@@ -116,10 +116,11 @@
       width: clamp(30rem, 20vw, 30rem);
     }
   
-    .visit button {
+    .visit a {
       margin: initial;
       cursor:pointer;
       font-size: 3rem;
+      text-decoration:none; 
     }
     title {
       background: url(../images/favicon.ico);
