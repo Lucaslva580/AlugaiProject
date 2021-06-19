@@ -6,6 +6,7 @@
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content">
+      {{-- {{dd($dadosperfil)}} --}}
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
@@ -34,7 +35,7 @@
 
                 <h3 class="profile-username text-center">{{$dadosperfil[0]->nome}}</h3>
 
-                <p class="text-muted text-center">Na Alugaí desde 02/2021</p>
+                <p class="text-muted text-center">Na Alugaí desde {{$dadosperfil[0]->desde}}</p>
 
                 <ul class="list-group list-group-unbordered mb-3">
                   <li class="list-group-item">
@@ -94,7 +95,7 @@
             <div class="card">
                 <div class="card-header p-2">
                     <ul class="nav nav-pills">
-                        <li class="nav-item"><a class="nav-link active" href="#settings" data-toggle="tab">Settings</a></li>
+                        <li id="edit" class="nav-item"><button class="nav-link active"  data-toggle="tab">Editar</button></li>
                     </ul>
                 </div>
                 <!-- /.card-header -->
@@ -107,7 +108,7 @@
                                         <div class="form-group row">
                                             <label for="inputName" class="col-sm-3 col-form-label">Nome</label>
                                             <div class="col-sm-8">
-                                                <input value={{$dadosperfil[0]->nome}} type="text" class="form-control" id="inputName">
+                                                <input value="{{$dadosperfil[0]->nome}}" type="text" class="form-control" id="inputName">
                                             </div>
                                         </div>
                                     </div>
@@ -123,17 +124,17 @@
                                 <div class="row inputperfil">
                                     <div class="col">
                                         <div class="form-group row">
-                                            <label for="inputName2" class="col-sm-3 col-form-label">Senha</label>
+                                            <label for="inputPassword" class="col-sm-3 col-form-label">Senha</label>
                                             <div class="col-sm-8">
-                                                <input type="text" class="form-control" id="inputName2" placeholder="Name">
+                                                <input value="{{$dadosperfil[0]->password}}" type="text" class="form-control" id="inputPassword" placeholder="Name">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-group row">
-                                            <label for="inputExperience" class="col-sm-3 col-form-label">CPF</label>
+                                            <label for="inputCPF" class="col-sm-3 col-form-label">CPF</label>
                                             <div class="col-sm-8">
-                                                <textarea class="form-control" id="inputExperience" placeholder="Experience"></textarea>
+                                                <input value="{{$dadosperfil[0]->cpf}}" type="text" class="form-control" id="inputCPF" placeholder="000.000.0000-00">
                                             </div>
                                         </div>
                                     </div>
@@ -142,35 +143,17 @@
                                 <div class="row inputperfil">
                                     <div class="col">
                                         <div class="form-group row">
-                                            <label for="inputSkills" class="col-sm-3 col-form-label">RG</label>
+                                            <label for="inputRg" class="col-sm-3 col-form-label">RG</label>
                                             <div class="col-sm-8">
-                                                <input type="text" class="form-control" id="inputSkills" placeholder="Skills">
+                                                <input value="{{$dadosperfil[0]->rg}}" type="text" class="form-control" id="inputRg" placeholder="RG">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-group row">
-                                            <label for="inputSkills" class="col-sm-3 col-form-label">ESTADO</label>
+                                            <label for="inputEstado" class="col-sm-3 col-form-label">ESTADO</label>
                                             <div class="col-sm-8">
-                                                <input type="text" class="form-control" id="inputSkills" placeholder="Skills">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row inputperfil">
-                                    <div class="col">
-                                        <div class="form-group row">
-                                            <label for="inputSkills" class="col-sm-3 col-form-label">CELULAR</label>
-                                            <div class="col-sm-8">
-                                                <input type="text" class="form-control" id="inputSkills" placeholder="Skills">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="form-group row">
-                                            <label for="inputSkills" class="col-sm-3 col-form-label">RUA</label>
-                                            <div class="col-sm-8">
-                                                <input type="text" class="form-control" id="inputSkills" placeholder="Skills">
+                                                <input value="{{$dadosperfil[0]->estado}}" type="text" class="form-control" id="inputEstado" placeholder="Estado de moradia atual">
                                             </div>
                                         </div>
                                     </div>
@@ -178,17 +161,35 @@
                                 <div class="row inputperfil">
                                     <div class="col">
                                         <div class="form-group row">
-                                            <label for="inputSkills" class="col-sm-3 col-form-label">NÚMERO</label>
+                                            <label for="inputCelular" class="col-sm-3 col-form-label">CELULAR</label>
                                             <div class="col-sm-8">
-                                                <input type="text" class="form-control" id="inputSkills" placeholder="Skills">
+                                                <input type="text" value="{{$dadosperfil[0]->celular}}" class="form-control" id="inputCelular" placeholder="celular">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-group row">
-                                            <label for="inputSkills" class="col-sm-3 col-form-label">COMPLEMENTO</label>
+                                            <label for="inputRua" class="col-sm-3 col-form-label">RUA</label>
                                             <div class="col-sm-8">
-                                                <input type="text" class="form-control" id="inputSkills" placeholder="Skills">
+                                                <input type="text" value="{{$dadosperfil[0]->rua}}" class="form-control" id="inputRua" placeholder="rua">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row inputperfil">
+                                    <div class="col">
+                                        <div class="form-group row">
+                                            <label for="inputNumero" class="col-sm-3 col-form-label">NÚMERO</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" value="{{$dadosperfil[0]->numero}}" class="form-control" id="inputNumero" placeholder="NÚMERO">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group row">
+                                            <label for="inputCompl" class="col-sm-3 col-form-label">COMPLEMENTO</label>
+                                            <div class="col-sm-8">
+                                                <input value="{{$dadosperfil[0]->complemento}}" type="text" class="form-control" id="inputCompl" placeholder="COMPLEMENTO">
                                             </div>
                                         </div>
                                     </div>
@@ -198,24 +199,24 @@
                                 <div class="row inputperfil">
                                     <div class="col">
                                         <div class="form-group row">
-                                            <label for="inputSkills" class="col-sm-3 col-form-label">BAIRRO</label>
+                                            <label for="inputBairro" class="col-sm-3 col-form-label">BAIRRO</label>
                                             <div class="col-sm-8">
-                                                <input type="text" class="form-control" id="inputSkills" placeholder="Skills">
+                                                <input value="{{$dadosperfil[0]->bairro}}" type="text" class="form-control" id="inputBairro" placeholder="BAIRRO">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-group row">
-                                            <label for="inputSkills" class="col-sm-3 col-form-label">CIDADE</label>
+                                            <label for="inputCidade" class="col-sm-3 col-form-label">CIDADE</label>
                                             <div class="col-sm-8">
-                                                <input type="text" class="form-control" id="inputSkills" placeholder="Skills">
+                                                <input value="{{$dadosperfil[0]->cidade}}" type="text" class="form-control" id="inputCidade" placeholder="CIDADE">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="offset-sm-2 col-sm-8">
-                                        <button type="submit" class="btn btn-danger">Submit</button>
+                                        <button id="botao" type="submit" class="btn btn-danger">Submit</button>
                                     </div>
                                 </div>
                             </form>
@@ -234,3 +235,18 @@
 
 
 @endsection
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<script>
+
+    $( document ).ready(function() {
+        $('input').prop('disabled', true);
+        $('#botao').prop("hidden", true);
+    });
+
+    $('#edit').click(function() {
+        $('input').prop('disabled', false);
+        $('#botao').prop("hidden", false);
+    });
+
+</script>
