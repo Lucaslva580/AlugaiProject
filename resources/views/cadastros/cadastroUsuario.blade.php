@@ -10,7 +10,7 @@
 <body style="background-color:#1b98e0">
   <div class="container">
     <div class="row justify-content-center">
-      <form style="margin-bottom:2rem;" class="row g-3 col-10" method="post" action="/usuarios/adicionar" id="form">
+      <form style="margin-bottom:2rem;" class="row g-3 col-10" method="post" action={{route("adicionaUser")}} id="form">
       @csrf
 
       <script type= "text/javascript">

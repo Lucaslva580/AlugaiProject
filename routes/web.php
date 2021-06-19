@@ -45,9 +45,9 @@ Route::get('/adicionar',function(){
 
 // UsuáriosControllers
 Route::prefix('usuarios')->group(function () {
-    Route::post('/usuarios/adicionar', [UserController::class, 'adiciona']);
-    Route::get('/usuarios/consultar', [UserController::class, 'consulta'])->name('consultaPerfil');
-    Route::delete('/usuarios/excluir', [UserController::class, 'exclui']);
+    Route::post('/adicionarUser', [UserController::class, 'adiciona'])->name('adicionaUser');
+    Route::get('/consultar', [UserController::class, 'consulta'])->name('consultaPerfil');
+    Route::delete('/excluir', [UserController::class, 'exclui']);
 });
 // UsuáriosViews
 Route::get('/cadastroUsuario', function () {
