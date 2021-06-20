@@ -1,0 +1,7 @@
+Jpa
+entity framework
+linque
+
+banco: sql-server
+
+ms project
