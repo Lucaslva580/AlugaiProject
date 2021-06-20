@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\product;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -27,6 +26,7 @@ class UserController extends Controller
             alert('Esse RG já foi registrado');</script>";
             return view('cadastros/cadastroUsuario');
         }else{
+            $path = $request->file('imagens')->store('files');
             $data = [
                         'nome' => $dados['nome'], 
                         'cpf' => $dados['cpf'],
@@ -42,6 +42,7 @@ class UserController extends Controller
                         'estado' => $dados['estado'],
                         'CEP'=>$dados['CEP'],
                         'email' => $dados['email'],
+                        'image' => $path,
                         'password' => $dados['password'],
                         'sysactive' => 1,
             ];
@@ -62,7 +63,7 @@ class UserController extends Controller
                 'celular' => $dados['inputCelular'],
                 'rua' => $dados['inputRua'],
                 'numero' => $dados['inputNumero'],
-                'complemento' => $dados['inputCompl'],
+                'complemento' => $dados['complemento'],
                 'bairro' => $dados['inputBairro'],
                 'cidade' => $dados['inputCidade'],
                 'estado' => $dados['inputEstado'],

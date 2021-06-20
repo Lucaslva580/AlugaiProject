@@ -30,6 +30,7 @@ class User extends Authenticatable
         'cidade',
         'estado',
         'email',
+        'image',
         'password',
         'sysactive',
     ];

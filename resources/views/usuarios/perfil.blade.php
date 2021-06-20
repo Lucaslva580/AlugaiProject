@@ -30,7 +30,7 @@
               <div class="card-body box-profile">
                 <div class="text-center">
                   <img class="profile-user-img img-fluid"
-                       src="../../dist/img/user4-128x128.jpg"
+                       src="{{ asset("storage/".$dadosperfil[0]->image) }}"
                        alt="User profile picture">
                 </div>
 

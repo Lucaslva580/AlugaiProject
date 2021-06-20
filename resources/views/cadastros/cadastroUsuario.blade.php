@@ -10,7 +10,7 @@
 <body style="background-color:#1b98e0">
   <div class="container">
     <div class="row justify-content-center">
-      <form style="margin-bottom:2rem;" class="row g-3 col-10" method="post" action={{route("adicionaUser")}} id="form">
+      <form enctype="multipart/form-data" style="margin-bottom:2rem;" class="row g-3 col-10" method="post" action={{route("adicionaUser")}} id="form" >
       @csrf
 
       <script type= "text/javascript">
@@ -57,6 +57,10 @@
                         <label for="inputCPF" class="form-label">CPF</label>
                         <input type="text" class="form-control" placeholder="xxx.xxx.xxx-xx" id="inputCPF" name="cpf" required>
                       </div>
+                      <div class="col-md-6">
+                        <label for="formFileMultiple" class="form-label">Selecione as fotos do seu produto</label>
+                        <input type="file" class="form-control" name="imagens" aria-label="file example" required multiple>
+                      </div>
                     </div>
                     <div class="row">
                       <div class="col-md-6">
@@ -74,7 +78,7 @@
             </div>
             <div class="carousel-item " data-bs-interval="false">
               <div class="row justify-content-center">
-                <div class="card text-dark mb-9 col-9 id="cardEndereco">
+                <div class="card text-dark mb-9 col-9" id="cardEndereco">
                   <h2 class="text-center">Dados de endereço</h2>
                   <div class="col d-flex justify-content-center">
                     <div class="row g-10" style="margin:3rem">
@@ -110,7 +114,7 @@
                       </div>
                       <div class="col-md-5">
                         <label for="inputCEP" class="form-label">CEP</label>
-                        <input type="text" class="form-control" id="inputCEP" placeholder="xxxxx-xxx" name="cep" required>
+                        <input type="text" class="form-control" id="inputCEP" placeholder="xxxxx-xxx" name="CEP" required>
                       </div>
                       <div class="col-md-12">
                         <label for="inputComplemento" class="form-label">Complemento</label>

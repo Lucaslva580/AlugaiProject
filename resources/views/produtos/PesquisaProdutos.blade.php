@@ -33,7 +33,7 @@
                       <p class="text-muted text-sm"><b>Valor: </b> R$ {{' '.$produto->product_value}}</p>
                     </div>
                     <div class="col-5 text-center">
-                      <img src="{{ asset("storage/".$produto->image) }}" alt="user-avatar" class="img-fluid">
+                      <img src="{{ asset("storage/".$produto->image) }}" alt="image-product" class="img-fluid">
                     </div>
                   </div>
                 </div>

@@ -29,6 +29,7 @@ class CreateUsersTable extends Migration
         $table->string('estado');
         $table->string('CEP')->nullable();
         $table->string('email')->unique();
+        $table->string("image")->nullable();
         $table->string('password');
         $table->integer('sysactive')->boolval();
         $table->timestamp('created_at');
