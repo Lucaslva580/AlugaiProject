@@ -27,6 +27,7 @@ class CreateUsersTable extends Migration
         $table->string('bairro');
         $table->string('cidade');
         $table->string('estado');
+        $table->string('CEP')->nullable();
         $table->string('email')->unique();
         $table->string('password');
         $table->integer('sysactive')->boolval();

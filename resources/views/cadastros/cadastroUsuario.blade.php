@@ -110,7 +110,7 @@
                       </div>
                       <div class="col-md-5">
                         <label for="inputCEP" class="form-label">CEP</label>
-                        <input type="text" class="form-control" id="inputZip" placeholder="xxxxx-xxx" name="cep" required>
+                        <input type="text" class="form-control" id="inputCEP" placeholder="xxxxx-xxx" name="cep" required>
                       </div>
                       <div class="col-md-12">
                         <label for="inputComplemento" class="form-label">Complemento</label>

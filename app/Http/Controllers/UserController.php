@@ -40,6 +40,7 @@ class UserController extends Controller
                         'bairro' => $dados['bairro'],
                         'cidade' => $dados['cidade'],
                         'estado' => $dados['estado'],
+                        'CEP'=>$dados['CEP'],
                         'email' => $dados['email'],
                         'password' => $dados['password'],
                         'sysactive' => 1,
@@ -51,23 +52,49 @@ class UserController extends Controller
         }
     }
 
+    public function editaUser(Request $request){
+        $dados = $request->all();
+            $dadosperfil = [
+                'nome' => $dados['inputName'], 
+                'cpf' => $dados['inputCPF'],
+                'rg' => $dados['inputRG'],
+                'dataNascimento' => $dados['inputDate'],
+                'celular' => $dados['inputCelular'],
+                'rua' => $dados['inputRua'],
+                'numero' => $dados['inputNumero'],
+                'complemento' => $dados['inputCompl'],
+                'bairro' => $dados['inputBairro'],
+                'cidade' => $dados['inputCidade'],
+                'estado' => $dados['inputEstado'],
+                'CEP'=>$dados['inputCEP'],
+                'email' => $dados['inputEmail'],
+                'password' => $dados['inputPassword'],
+                'sysactive' => 1,
+            ];
+
+            User::where('id', session('id') )
+            ->update($dadosperfil);
+            echo "<script language='javascript' type='text/javascript'>
+            alert('Edição concluída');</script>";
+
+            return redirect('usuarios/consultar');
+    }
+
     public function consulta(){
     if (session('sessionHash') == null){
         return view('login');
     }else{
-        $dadosperfil = DB::select("SELECT u.*,( select count(id) from products where userId=3) as qtdprodutos,(select date_format(created_at, '%d/%c/%y')) as desde from users u where u.id=3");
-
+        $sessionID=session('id');
+        $dadosperfil = DB::select("SELECT u.*,( select count(id) from products where userId=3) as qtdprodutos,(select date_format(created_at, '%d/%c/%y')) as desde from users u where u.id=$sessionID");
         return view('usuarios/perfil', compact('dadosperfil'));
     }
 
     }
 
-    public function Exclui($userId){
-
-        DB::delete('delete from users where id= :userId' , ['userId' => $userId]);
-        print_r("deletado");
-
-        // return view('produtos', $results);
+    public function Exclui(){
+        DB::delete('delete from users where id= :userId' , ['userId' => session('id')]);
+        session()->flush();
+        return view('login');
     }
 
 }

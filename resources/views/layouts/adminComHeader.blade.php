@@ -55,7 +55,7 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Perfil</a>
           <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
-            <li><a class="dropdown-item" href="{{ route('consultaPerfil') }}">Meu perfil</a></li>
+            <li><a class="dropdown-item" href="{{ route('consultaUser') }}">Meu perfil</a></li>
             <li><a class="dropdown-item" href="#">Meus produtos</a></li>
             <li><a class="dropdown-item" href="{{ route('adicionaProdutos') }}">Cadastrar produtos</a></li>
             <li><a class="dropdown-item" href="#">Minhas locações</a></li>
