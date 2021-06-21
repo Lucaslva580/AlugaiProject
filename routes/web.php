@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\{
     AutenticaController,
     PostController,
@@ -30,6 +31,8 @@ Route::get('/desloga', [SessionController::class, 'desloga'])->name('desloga');
 Route::prefix('produtos')->group(function () {
     Route::get('/lista', [ProdutosController::class, 'index'])->name('lista');
     Route::post('/adicionar', [ProdutosController::class, 'adicionar'])->name('adicionar');
+    Route::get('/consultaProduto', [ProdutosController::class, 'consultaProduto'])->name('consultaProduto');
+    Route::get('/meusProdutos', [ProdutosController::class, 'meusProdutos'])->name('meusProdutos');
     Route::get('/excluir/{ProdutoID}', [ProdutosController::class, 'excluir'])->name('excluir');
     Route::get('/alterar/{ProdutoID}', [ProdutosController::class, 'index'])->name('alterar');
 });
@@ -42,6 +45,10 @@ Route::get('/adicionar',function(){
         return view('produtos/adicionaProdutos');
     };
 })->name('adicionaProdutos');
+
+Route::get('/produtoInfo', function () {
+    return view('produtos/produtoInfo');
+})->name('produtoInfo');
 
 // UsuáriosControllers
 Route::prefix('usuarios')->group(function () {

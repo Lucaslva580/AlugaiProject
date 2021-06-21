@@ -23,8 +23,10 @@
   <script src="{{ asset('site/bootstrap.js') }}"></script>
   <script src="{{ asset('site/bootstrap.css') }}" rel="stylesheet" type="text/css"></script>
   <link href="{{ asset('css/cadastroProdutos.css') }}" rel="stylesheet" type="text/css">
+  <link href="{{ asset('css/produtoInfo.css') }}" rel="stylesheet" type="text/css">
   <link href="{{ asset('css/perfil.css') }}" rel="stylesheet" type="text/css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@pnotify/core@5.2.0/dist/PNotify.min.js"></script>
   <!-- AdminLayout -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/css/adminlte.min.css">
   <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/js/adminlte.min.js"></script>
@@ -36,8 +38,8 @@
   
   <script src="//code-sa1.jivosite.com/widget/eS3mPBjnky" async></script>
 
+  
 </head>
-
 <body class="hold-transition sidebar-mini layout-fixed" data-panel-auto-height-mode="height">
   <div class="wrapper">
     <!-- Navbar -->
@@ -56,7 +58,7 @@
           <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Perfil</a>
           <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
             <li><a class="dropdown-item" href="{{ route('consultaUser') }}">Meu perfil</a></li>
-            <li><a class="dropdown-item" href="#">Meus produtos</a></li>
+            <li><a class="dropdown-item" href="{{ route('meusProdutos') }}">Meus produtos</a></li>
             <li><a class="dropdown-item" href="{{ route('adicionaProdutos') }}">Cadastrar produtos</a></li>
             <li><a class="dropdown-item" href="#">Minhas locações</a></li>
             <li><a class="dropdown-item" href="#">Configurações</a></li>

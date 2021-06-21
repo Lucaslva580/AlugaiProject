@@ -42,9 +42,12 @@
                     <a href={{str_replace(' ','',"https://api.whatsapp.com/send?phone=55".$produto->celular)}} class="btn btn-sm bg-teal" target="_blank">
                       <i class="fas fa-comments"></i>
                     </a>
-                    <a href="#" class="btn btn-sm btn-primary">
-                      <i class="fas fa-user"></i> Ver Produto
-                    </a>
+                    <form id="verProduto{{$produto->id}}" action={{ route('consultaProduto') }} method="get" hidden>
+                      <input name="idProduto" value={{$produto->id}} type="text">
+                    </form>
+                      <button type="submit" form="verProduto{{$produto->id}}" class="btn btn-sm btn-primary">
+                        <i class="fas fa-user"></i> Ver Produto
+                      </button>
                   </div>
                 </div>
               </div>

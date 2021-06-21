@@ -82,5 +82,4 @@
     reverse: true
   });
 </script>
-
 @endsection

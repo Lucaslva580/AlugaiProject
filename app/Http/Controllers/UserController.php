@@ -86,7 +86,7 @@ class UserController extends Controller
         return view('login');
     }else{
         $sessionID=session('id');
-        $dadosperfil = DB::select("SELECT u.*,( select count(id) from products where userId=3) as qtdprodutos,(select date_format(created_at, '%d/%c/%y')) as desde from users u where u.id=$sessionID");
+        $dadosperfil = DB::select("SELECT u.*,( select count(id) from products where userId=3) as qtdprodutos,(select date_format(u.created_at, '%d/%c/%y')) as desde from users u where u.id=$sessionID");
         return view('usuarios/perfil', compact('dadosperfil'));
     }
 

@@ -180,7 +180,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row inputperfil">
+                                </div>
+                                <div class="row inputperfil">
                                     <div class="col">
                                         <div class="form-group row">
                                             <label for="inputTelefone" class="col-sm-3 col-form-label">TELEFONE</label>
@@ -212,7 +213,7 @@
                                         <div class="form-group row">
                                             <label for="inputCompl" class="col-sm-3 col-form-label">COMPLEMENTO</label>
                                             <div class="col-sm-8">
-                                                <input value="{{$dadosperfil[0]->complemento}}" name="inputCompl" type="text" class="form-control" id="inputCompl" placeholder="COMPLEMENTO">
+                                                <input value="{{$dadosperfil[0]->complemento}}" name="complemento" type="text" class="form-control" id="inputCompl" placeholder="COMPLEMENTO">
                                             </div>
                                         </div>
                                     </div>
@@ -236,7 +237,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
                                 </div>
                                 <div class="row inputperfil">
                                     <div class="col">
@@ -259,7 +259,8 @@
                         <!-- /.tab-pane -->
                     </div>
                     <!-- /.tab-content -->
-                </div><!-- /.card-body -->
+                </div>
+                <!-- /.card-body -->
             </div>
             <!-- /.card -->
             <div class="row justify-content-md-center">
