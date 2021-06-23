@@ -42,8 +42,15 @@ class ProdutosController extends Controller
           return view('produtos/PesquisaProdutos', compact('produtos'));
     }
 
-    public function excluir($UserID, $ProdutoID){
-        echo 'Usuario: '.$UserID.' Produto:'.$ProdutoID;
+    public function AlteraStatusProduto(Request $request){
+        $id = $request->id;
+        $status = $request->status;
+        $dadosprodutos= [
+            'sys_active' => $status,
+        ];
+
+        Product::where('id', $id)
+        ->update($dadosprodutos);
     }
     
     public function consultaProduto(Request $request){
@@ -69,6 +76,37 @@ class ProdutosController extends Controller
                 $dadoscategorias = DB::select("SELECT c.id as categoriaID, c.categoria as categoria from categories c");
                 return view('produtos/meusProdutos', compact('dadosprodutos'), compact('dadoscategorias'));
             }
+    }
+
+    public function excluiProduto(Request $request){
+        $productId = $request->id;
+        DB::delete('delete from products where id= :productId' , ['productId' => $productId]);
+    }
+
+    public function EditaProduto(Request $request){
+        $dados = $request->all();
+        $valorTratado = str_replace(',','.',$dados['valorProduto']);
+        if (isset($dados['alugado'])) {
+            $alugado = 0;
+        } else {
+            $alugado = 1;
+        }
+        $data = [
+            'id' => $dados['idProduto'],
+            'name' => $dados['nomeProduto'],
+            'category' => $dados['categoriaProduto'],
+            'product_value' => $valorTratado,
+            'description' => $dados['descricaoProduto'],
+            'alugado' => $alugado,
+        ];
+
+        Product::where('id', $dados['idProduto'])
+        ->update($data);
+
+        $sessionID=session('id');
+        $dadosprodutos = DB::select(" SELECT p.*, c.categoria as categoriaNome,(select date_format(p.updated_at, '%d/%c/%y')) as desde from products p left join categories c on p.category=c.id where p.userId=$sessionID ");
+        $dadoscategorias = DB::select("SELECT c.id as categoriaID, c.categoria as categoria from categories c");
+        return view('produtos/meusProdutos', compact('dadosprodutos'), compact('dadoscategorias'));
     }
 
 }

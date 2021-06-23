@@ -13,10 +13,12 @@
 }
 
 h1 {
-  color:#13293d;
-  font-size: clamp(10px, 15vw, 200px);
-  font-family: 'Yellowtail', sans-serif;
-  text-shadow: 2px 2px white;
+  color:white;
+  font-size: clamp(10px, 15vw, 90px);
+  font-family: 'Nunito', sans-serif;
+  font-weight: 1000;
+  text-shadow: 2px 2px #13293d;
+  margin-top: 5%;
 }
 
 #entrar {
@@ -38,4 +40,8 @@ h1 {
   font-weight: bold;
   padding: 2px;
   font-size: 22px;
+}
+
+body{
+  background: linear-gradient(329.54deg, #006494 0%, #e8f1f2 150%);
 }

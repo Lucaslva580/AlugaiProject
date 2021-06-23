@@ -20,6 +20,7 @@ class Products extends Migration
         $table->float('product_value');
         $table->string('description');
         $table->string("image")->nullable();
+        $table->integer('alugado')->boolval()->nullable();
         $table->boolean("sys_active");
         $table->timestamp('created_at')->nullable();
         $table->timestamp('updated_at');

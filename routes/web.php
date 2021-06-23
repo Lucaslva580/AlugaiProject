@@ -33,8 +33,9 @@ Route::prefix('produtos')->group(function () {
     Route::post('/adicionar', [ProdutosController::class, 'adicionar'])->name('adicionar');
     Route::get('/consultaProduto', [ProdutosController::class, 'consultaProduto'])->name('consultaProduto');
     Route::get('/meusProdutos', [ProdutosController::class, 'meusProdutos'])->name('meusProdutos');
-    Route::get('/excluir/{ProdutoID}', [ProdutosController::class, 'excluir'])->name('excluir');
-    Route::get('/alterar/{ProdutoID}', [ProdutosController::class, 'index'])->name('alterar');
+    Route::post('/AlteraStatusProduto', [ProdutosController::class, 'AlteraStatusProduto'])->name('AlteraStatusProduto');
+    Route::delete('/ExcluiProduto', [ProdutosController::class, 'ExcluiProduto'])->name('ExcluiProduto');
+    Route::post('/EditaProduto', [ProdutosController::class, 'EditaProduto'])->name('EditaProduto');
 });
 
 // ProdutosViews
