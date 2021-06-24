@@ -30,12 +30,17 @@ Route::get('/desloga', [SessionController::class, 'desloga'])->name('desloga');
 // ProdutosControllers
 Route::prefix('produtos')->group(function () {
     Route::get('/lista', [ProdutosController::class, 'index'])->name('lista');
+    Route::get('/listaBusca', [ProdutosController::class, 'listaBusca'])->name('listaBusca');
     Route::post('/adicionar', [ProdutosController::class, 'adicionar'])->name('adicionar');
     Route::get('/consultaProduto', [ProdutosController::class, 'consultaProduto'])->name('consultaProduto');
     Route::get('/meusProdutos', [ProdutosController::class, 'meusProdutos'])->name('meusProdutos');
     Route::post('/AlteraStatusProduto', [ProdutosController::class, 'AlteraStatusProduto'])->name('AlteraStatusProduto');
     Route::delete('/ExcluiProduto', [ProdutosController::class, 'ExcluiProduto'])->name('ExcluiProduto');
     Route::post('/EditaProduto', [ProdutosController::class, 'EditaProduto'])->name('EditaProduto');
+    // Produto indisponivel
+    Route::get('/produtoIndisponivel', function(){
+    return view('produtos/produtoIndisponivel');
+    });
 });
 
 // ProdutosViews
@@ -67,14 +72,10 @@ Route::get('/cadastroFinalizado', function () {
     return view('cadastros/cadastroFinalizado');
 });
 
-Route::post('/perfil', function () {
-    return view('usuarios/perfil');
-})->name('perfil');
-
-
 // Home e indefinidos
 Route::get('/', function(){
     return view('home');
 });
 
 Route::get('/posts', [PostController::class, 'index'] );
+

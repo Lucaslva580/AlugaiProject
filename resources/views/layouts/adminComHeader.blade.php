@@ -16,6 +16,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@700&family=Pattaya&family=Yellowtail&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/c1066ac0af.js" crossorigin="anonymous"></script>
 
   <!-- Styles -->
@@ -25,6 +26,7 @@
   <link href="{{ asset('css/cadastroProdutos.css') }}" rel="stylesheet" type="text/css">
   <link href="{{ asset('css/produtoInfo.css') }}" rel="stylesheet" type="text/css">
   <link href="{{ asset('css/perfil.css') }}" rel="stylesheet" type="text/css">
+  <link href="{{ asset('css/produtoIndisponivel.css') }}" rel="stylesheet" type="text/css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/@pnotify/core@5.2.0/dist/PNotify.min.js"></script>
   <!-- AdminLayout -->
@@ -60,8 +62,6 @@
             <li><a class="dropdown-item" href="{{ route('consultaUser') }}">Meu perfil</a></li>
             <li><a class="dropdown-item" href="{{ route('meusProdutos') }}">Meus produtos</a></li>
             <li><a class="dropdown-item" href="{{ route('adicionaProdutos') }}">Cadastrar produtos</a></li>
-            <li><a class="dropdown-item" href="#">Minhas locações</a></li>
-            <li><a class="dropdown-item" href="#">Configurações</a></li>
           </ul>
         </li>
         @endif
@@ -88,9 +88,9 @@
             <i class="fas fa-search"></i>
           </a>
           <div class="navbar-search-block">
-            <form class="form-inline">
+            <form class="form-inline" action="{{route('listaBusca')}}">
               <div class="input-group input-group-sm">
-                <input class="form-control" type="busca" placeholder="Busca" aria-label="busca">
+                <input class="form-control" type="busca" name="busca" placeholder="Busca" aria-label="busca">
                 <div class="input-group-append">
                   <button class="btn btn-navbar" type="submit">
                     <i class="fas fa-search"></i>

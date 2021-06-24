@@ -42,6 +42,20 @@ class ProdutosController extends Controller
           return view('produtos/PesquisaProdutos', compact('produtos'));
     }
 
+    public function listaBusca(Request $request){
+        $busca = $request->busca;
+        $produtos = DB::table('products')
+        ->leftJoin('users', 'users.id', '=', 'products.userId')
+        ->leftjoin('categories', 'categories.id', '=', 'products.category')
+        ->select('products.*', 'users.email','users.cidade','users.estado','users.celular','users.sysactive', 'categories.categoria')
+        ->where('users.sysactive','=','1')
+        ->where('products.name','LIKE', '%'.$busca.'%')
+        ->where('products.sys_active','=','1')
+        ->orderByDesc('products.created_at')
+        ->paginate(6);
+          return view('produtos/PesquisaProdutos', compact('produtos'));
+    }
+
     public function AlteraStatusProduto(Request $request){
         $id = $request->id;
         $status = $request->status;
@@ -64,7 +78,12 @@ class ProdutosController extends Controller
         ->where('products.id','=',$id)
         ->get();
 
-        return view('produtos/produtoInfo',['result'=>$result]);
+        if ( !$result->count() )
+        {
+            return view('produtos/produtoIndisponivel');
+        }else{
+            return view('produtos/produtoInfo',['result'=> $result]);
+        }
     }
 
     public function meusProdutos(){

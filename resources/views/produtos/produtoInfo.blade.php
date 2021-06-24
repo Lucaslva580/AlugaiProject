@@ -32,13 +32,6 @@
               <p>{{$result[0]->description}}</p>
 
               <hr>
-              <h4 class="mt-3">Número de dias pretendido</h4>
-              <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                <div class="slider-blue">
-                  slider(talvez)
-                </div>
-              </div>
-
               <div class="bg-gray py-2 px-3 mt-4">
                 <h2 class="mb-0">
                   R$ {{$result[0]->product_value}} <small>(diária)</small>
@@ -101,7 +94,7 @@
                 </div>
                 <!-- /.user-block -->
                 <p>
-                  Ótimo produto, muito seguro para as crianças. E o rapaz que veio entregar foi super educado e solícito, achei ele um gato.
+                  Ótimo produto, muito seguro para as crianças. E o rapaz que veio entregar foi super educado e solícito.
                 </p>
 
                 <p>

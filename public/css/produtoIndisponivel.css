@@ -1,0 +1,15 @@
+
+
+#logo-cofre{
+    font: 400 1.8rem/1 'Nunito', sans-serif;
+    color:#13293D;
+    font-size: clamp(10px, 15vw, 90px);
+    font-family: 'Nunito', sans-serif;
+    font-weight: 1000;
+    text-shadow: 2px 2px #13293D;
+    margin-top: 5%;
+}
+
+#texto {
+    color:#13293D;
+}
