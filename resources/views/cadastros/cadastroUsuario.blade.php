@@ -58,7 +58,7 @@
                         <input type="text" class="form-control" placeholder="xxx.xxx.xxx-xx" id="inputCPF" name="cpf" required>
                       </div>
                       <div class="col-md-6">
-                        <label for="formFileMultiple" class="form-label">Selecione as fotos do seu produto</label>
+                        <label for="formFileMultiple" class="form-label">Selecione sua foto de perfil</label>
                         <input type="file" class="form-control" name="imagens" aria-label="file example" required multiple>
                       </div>
                     </div>
