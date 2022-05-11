@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Services\ProdutosService;
 
 class ProdutosController extends Controller
 {
@@ -12,33 +13,13 @@ class ProdutosController extends Controller
         $path = $request->file('imagens')->store('files');  
         $dados = $request->all();
 
-        $valorTratado = str_replace(',','.',$dados['valorProduto']);
-
-        $data = [
-            'userId' => session('id'),
-            'name' => $dados['nomeProduto'],
-            'category' => $dados['categoriaProduto'],
-            'product_value' => $valorTratado,
-            'description' => $dados['descricaoProduto'],
-            'image' => $path,
-            'sys_active' => 1,
-        ];
-
-        Product::create($data);
+        ProdutosService::insertProduto($dados, $path);
 
         return view('cadastros/cadastroProdutoFinalizado');
-
     }
     
     public function index(){
-        $produtos = DB::table('products')
-        ->leftJoin('users', 'users.id', '=', 'products.userId')
-        ->leftjoin('categories', 'categories.id', '=', 'products.category')
-        ->select('products.*', 'users.email','users.cidade','users.estado','users.celular','users.sysactive', 'categories.categoria')
-        ->where('users.sysactive','=','1')
-        ->where('products.sys_active','=','1')
-        ->orderByDesc('products.created_at')
-        ->paginate(6);
+        $produtos = ProdutosService::getProdutos();
           return view('produtos/PesquisaProdutos', compact('produtos'));
     }
 
